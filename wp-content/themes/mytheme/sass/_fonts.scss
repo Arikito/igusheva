@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=cyrillic,latin);
+@font-face {
+	font-family: "Cambria";
+	src: url("fonts/cambria/Cambria-Regular.eot?") format("eot"),
+		 url("fonts/cambria/Cambria-Regular.woff") format("woff"),
+		 url("fonts/cambria/Cambria-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Cambria";
+	font-style: italic;
+	src:
+		 url("fonts/cambria/Cambria-Italic.woff") format("woff"),
+		 url("fonts/cambria/Cambria-Italic.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Cambria";
+	font-weight: bold;
+	src:
+		 url("fonts/cambria/Cambria-Bold.woff") format("woff"),
+		 url("fonts/cambria/Cambria-Bold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Cambria";
+	font-style: italic;
+	font-weight: bold;
+	src:
+		 url("fonts/cambria/Cambria-Bold-Italic.woff") format("woff"),
+		 url("fonts/cambria/Cambria-Bold-Italic.ttf") format("truetype");
+}
