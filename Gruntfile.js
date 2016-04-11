@@ -17,8 +17,10 @@ module.exports = function(grunt) {
 			}
 		},
 		sass: {
-			files: {
-				'/wp-content/themes/mytheme/style.css' : '/wp-content/themes/mytheme/sass/style.scss'
+			dist: {
+				files: {
+					'wp-content/themes/mytheme/style.css': 'wp-content/themes/mytheme/sass/style.scss'
+				}
 			}
 		}
 	});
