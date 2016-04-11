@@ -2,13 +2,7 @@
 <div class="main-content">
 	<?php if(have_posts()){
 		while(have_posts()){ ?>
-			<?php the_post();?>
-
-			<!-- Test -->
-			<H1>Test</H1>
-			<h2>Test2</h2>
-			<h3>Test3</h3>
-			
+			<?php the_post();?>			
 			<article class="block">
 				<h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 				<a href="<?php the_permalink();?>" class="thumbnail"><?php the_post_thumbnail();?></a>
