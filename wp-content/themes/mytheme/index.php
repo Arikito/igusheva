@@ -7,6 +7,7 @@
 			<!-- Test -->
 			<H1>Test</H1>
 			<h2>Test2</h2>
+			<h3>Test3</h3>
 			
 			<article class="block">
 				<h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
