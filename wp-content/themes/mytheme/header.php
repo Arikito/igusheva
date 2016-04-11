@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="animations">
+<html <?php language_attributes(); ?>> <!-- class="animations"> -->
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<!--Let browser know website is optimized for mobile-->
