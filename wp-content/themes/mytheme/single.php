@@ -6,6 +6,13 @@
 		<article class="block">
 			<div class="content"><?php the_content(); ?></div>
 			<div class="tags"><?php the_tags(); ?></div>
+			<div class="comment list">
+				<?php
+				// If comments are open or we have at least one comment, load up the comment template.
+				if(comments_open() || get_comments_number()){
+					comments_template();
+				} ?>
+			</div>
 		</article>
 	<?php } ?>
 </div>
