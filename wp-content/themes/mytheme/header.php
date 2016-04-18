@@ -18,7 +18,7 @@
 			<a href="<?php echo home_url(); ?>" class="logo"><?php bloginfo('name');?></a>
 			<?php wp_nav_menu();?>
 			
-			<!-- <?php get_search_form();?> -->
+			<?php get_search_form();?>
 		</div>
 	</header>
 	<div class="page-wrap"> 

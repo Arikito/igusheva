@@ -59,7 +59,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.box-shadow, .block, aside .block .follow_me a:hover, header {
+.box-shadow, .block, aside .block .follow_me a:hover, footer, header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); }
 
 .accent, .block, header ul.menu > li, header ul.menu > li:hover, header ul.menu > li.current-menu-item {
@@ -248,7 +248,10 @@ footer {
   flex-basis: 100%;
   display: block;
   float: left;
-  clear: both; }
+  clear: both;
+  background: #fff;
+  height: 30px;
+  text-align: center; }
 
 header {
   width: 100%;
@@ -289,5 +292,35 @@ html.animations .main-content article.block {
 html.animations header {
   top: -90px;
   position: relative; }
+
+#wp-calendar {
+  margin-left: calc(50% - 70px); }
+  #wp-calendar caption {
+    color: #f00;
+    font-weight: bold;
+    margin-bottom: 3px; }
+  #wp-calendar thead {
+    line-height: 20px; }
+  #wp-calendar tbody td {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%; }
+    #wp-calendar tbody td:hover {
+      background: #f00;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.4s ease; }
+    #wp-calendar tbody td a {
+      color: #f00;
+      font-weight: bolder; }
+      #wp-calendar tbody td a:hover {
+        color: #fff; }
+  #wp-calendar tfoot #next {
+    text-align: right; }
+  #wp-calendar tfoot a {
+    color: #f00;
+    font-weight: bolder; }
 
 /*# sourceMappingURL=style.css.map */

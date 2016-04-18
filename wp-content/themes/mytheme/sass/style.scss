@@ -258,6 +258,10 @@ footer {
 	display: block;
 	float: left;
 	clear: both;
+	background: $white;
+	height:  $gap;
+	text-align: center;
+	@extend .box-shadow;
 }
 // !footer
 
@@ -328,5 +332,49 @@ html.animations {
 	header {
 		top: -90px;
 		position: relative;
+	}
+}
+
+// Calendar styles
+#wp-calendar {
+	margin-left: calc(50% - 70px);
+	caption {
+		color: #f00;
+		font-weight: bold;
+		margin-bottom: 3px;
+	}
+	thead {
+		line-height: 20px;  
+	}
+	tbody {
+		td {
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center; 
+			border-radius: 50%;  
+			&:hover {
+				background: #f00;
+				color: #fff;
+				cursor: pointer;
+				transition: all.4s ease;
+			}
+			a {
+				color: #f00; 
+				font-weight: bolder;
+				&:hover {
+				color: #fff;
+				}
+			}
+		}
+	}
+	tfoot {
+		#next {
+			text-align: right;
+		}
+		a {
+			color: #f00; 
+			font-weight: bolder;				
+		}
 	}
 }
