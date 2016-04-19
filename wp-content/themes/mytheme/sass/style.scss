@@ -31,6 +31,11 @@ Version: 1.0
 	-o-transition: all .4s cubic-bezier(.4,0,.2,1);
 	transition: all .4s cubic-bezier(.4,0,.2,1);
 }
+
+.hidden {
+	display: none !important;
+}
+
 // !expansions
 
 
@@ -91,6 +96,7 @@ blockquote {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	padding: 0 15px;
+	position: relative;
 }
 // !global styles
 
@@ -376,5 +382,51 @@ html.animations {
 			color: #f00; 
 			font-weight: bolder;				
 		}
+	}
+}
+
+//Search styles
+.menu-main-container{
+	margin-right: 40px;
+}
+.searchWraper {
+	display: none;
+	position: absolute;
+    top: 0px;
+    right: 15px;
+    background: #fff;    
+    height: 90px;
+   
+	.search-form {
+		height: 30px;
+		padding-top: 25px;		
+		
+		button {
+			border: none;
+			background: none;
+			outline: none;		
+		}
+		i {
+			cursor: pointer;
+		}
+		.search-field {
+			border: none;
+			border-bottom: 1px solid $gray4;
+			outline: none;
+			width: calc(100% - 90px);		
+		}	
+	}
+}
+
+.searchBtnsWraper {
+	width: 50px;
+    position: absolute;
+    right: 0;
+    top: 33px;
+    i {
+    	cursor: pointer;
+    }
+	.closeSearchBtn {
+		display: none;
 	}
 }

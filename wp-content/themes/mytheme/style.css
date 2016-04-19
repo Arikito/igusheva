@@ -78,6 +78,9 @@ table {
   -o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 
+.hidden {
+  display: none !important; }
+
 html {
   font-family: "Cambria", "serif"; }
   html body {
@@ -126,7 +129,8 @@ blockquote {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 15px; }
+  padding: 0 15px;
+  position: relative; }
 
 .main-content {
   flex-basis: 75%;
@@ -322,5 +326,40 @@ html.animations header {
   #wp-calendar tfoot a {
     color: #f00;
     font-weight: bolder; }
+
+.menu-main-container {
+  margin-right: 40px; }
+
+.searchWraper {
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  background: #fff;
+  height: 90px; }
+  .searchWraper .search-form {
+    height: 30px;
+    padding-top: 25px; }
+    .searchWraper .search-form button {
+      border: none;
+      background: none;
+      outline: none; }
+    .searchWraper .search-form i {
+      cursor: pointer; }
+    .searchWraper .search-form .search-field {
+      border: none;
+      border-bottom: 1px solid #888;
+      outline: none;
+      width: calc(100% - 90px); }
+
+.searchBtnsWraper {
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: 33px; }
+  .searchBtnsWraper i {
+    cursor: pointer; }
+  .searchBtnsWraper .closeSearchBtn {
+    display: none; }
 
 /*# sourceMappingURL=style.css.map */

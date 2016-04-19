@@ -41,4 +41,34 @@ $(function(){
 		});
 		// Kick off one resize to fix all videos on page load
 	}).resize();
+
+	$(".openSearchBtn").click(function() {	
+		$(".searchWraper").fadeIn("slow");
+		var length = $(".menu-main-container").width();
+		console.log(length);
+		$('.searchWraper').width(length + 40);
+		/*$('.closeSearchBtn').show("slow");
+		$('.openSearchBtn').hide('hidden');*/
+		/*$('.search-submit').removeClass('hidden');		
+		$('.search-field').removeClass('hidden');
+		$('.openSearchBtn').addClass('hidden');
+		$('.closeSearchBtn').removeClass('hidden');*/
+
+		$('.openSearchBtn').css('display', 'none');
+		$('.closeSearchBtn').css('display', 'block');
+	})
+
+	$(".closeSearchBtn").click(function() {	
+		$(".searchWraper").fadeOut("slow");
+		$('.openSearchBtn').css('display', 'block');
+		$('.closeSearchBtn').css('display', 'none');
+		/*$('.closeSearchBtn').hide("slow");
+		$('.openSearchBtn').show('hidden');*/
+
+		/*$('.search-submit').addClass('hidden');		
+		$('.search-field').addClass('hidden');
+		$('.openSearchBtn').removeClass('hidden');
+		$('.closeSearchBtn').addClass('hidden');*/
+	})
+
 });
