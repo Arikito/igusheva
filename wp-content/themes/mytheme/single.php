@@ -6,6 +6,7 @@
 		<article class="block">
 			<div class="content"><?php the_content(); ?></div>
 			<div class="tags"><?php the_tags(); ?></div>
+		</article>
 			<div class="comment list">
 				<?php
 				// If comments are open or we have at least one comment, load up the comment template.
@@ -13,7 +14,6 @@
 					comments_template();
 				} ?>
 			</div>
-		</article>
 	<?php } ?>
 </div>
 <?php get_sidebar(); ?>

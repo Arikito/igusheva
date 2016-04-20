@@ -322,9 +322,6 @@ header {
 }
 // !header
 
-
-
-
 // load and unload animations basics 
 html.animations {
 	.main-content {
@@ -428,5 +425,104 @@ html.animations {
     }
 	.closeSearchBtn {
 		display: none;
+	}
+}
+
+
+// Comments & article tags style
+.block .tags {
+	clear: both;
+    padding-top: $gap/2;
+    color: $accent;
+     a {
+     	color: $gray3;
+     }
+}
+
+#comments {
+	h2 {
+		margin-bottom: $gap/2;
+	}
+	.comment-list {
+		a {
+			color: $accent;
+		}		
+		.comment-author{
+			display: flex;
+			img {
+				width: 50px;
+				height: 50px;
+			}
+			.comment-meta {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				margin-left: $gap/2;		
+			    font-weight: bold;
+			    color: $gray2;
+			    .authorOfComment {
+			    	font-size: 1.5em;
+			    }
+				.timeOfComment {
+					font-size: 0.85em;
+					margin-top: $gap/6;
+				}
+			}
+		}
+		.depth-1 > .children {
+			margin-left: $gap*2;
+			.comment-author {
+				font-size: 0.85em;
+			}					
+			img {
+				width: 30px;
+				height: 30px;
+			}
+		}		
+		p {
+			margin-top: $gap/2;
+   			margin-bottom: $gap/2;
+   			text-align: justify;
+   			line-height: 1.5em;   			
+		}
+		.comment {
+			margin-top: $gap/2;
+		}
+	}
+	.comment-list li {
+		border-top: 1px dashed $gray5;
+		padding-top: $gap/2;
+	}
+}
+
+
+// New comment form
+
+.newCommentForm {
+	a {
+		color: $accent;
+	}
+	p {
+		margin-top: 5px;
+		label {
+			float: left;
+    		width: 100%;
+    		margin-bottom: $gap/2;
+		}
+		input {
+			background: $accent;
+			border: none;
+			color: #fff;
+			height: 30px;
+		}
+		textarea {
+			outline-color: $accent;
+			width: 100%;
+		}
+	}
+	.comment-respond {
+		h2 {
+			text-align: center;
+		}
 	}
 }

@@ -362,4 +362,69 @@ html.animations header {
   .searchBtnsWraper .closeSearchBtn {
     display: none; }
 
+.block .tags {
+  clear: both;
+  padding-top: 15px;
+  color: #f00; }
+  .block .tags a {
+    color: #666; }
+
+#comments h2 {
+  margin-bottom: 15px; }
+#comments .comment-list a {
+  color: #f00; }
+#comments .comment-list .comment-author {
+  display: flex; }
+  #comments .comment-list .comment-author img {
+    width: 50px;
+    height: 50px; }
+  #comments .comment-list .comment-author .comment-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 15px;
+    font-weight: bold;
+    color: #444; }
+    #comments .comment-list .comment-author .comment-meta .authorOfComment {
+      font-size: 1.5em; }
+    #comments .comment-list .comment-author .comment-meta .timeOfComment {
+      font-size: 0.85em;
+      margin-top: 5px; }
+#comments .comment-list .depth-1 > .children {
+  margin-left: 60px; }
+  #comments .comment-list .depth-1 > .children .comment-author {
+    font-size: 0.85em; }
+  #comments .comment-list .depth-1 > .children img {
+    width: 30px;
+    height: 30px; }
+#comments .comment-list p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: justify;
+  line-height: 1.5em; }
+#comments .comment-list .comment {
+  margin-top: 15px; }
+#comments .comment-list li {
+  border-top: 1px dashed #ccc;
+  padding-top: 15px; }
+
+.newCommentForm a {
+  color: #f00; }
+.newCommentForm p {
+  margin-top: 5px; }
+  .newCommentForm p label {
+    float: left;
+    width: 100%;
+    margin-bottom: 15px; }
+  .newCommentForm p input {
+    background: #f00;
+    border: none;
+    color: #fff;
+    height: 30px; }
+  .newCommentForm p textarea {
+    outline-color: #f00;
+    width: 100%; }
+.newCommentForm .comment-respond h2 {
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */
