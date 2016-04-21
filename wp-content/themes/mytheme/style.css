@@ -171,10 +171,32 @@ blockquote {
       height: auto;
       display: block; }
     .main-content article .content {
-      float: right; }
+      float: right;
+      padding-bottom: 15px; }
       .main-content article .content p {
         line-height: 1.714em;
         text-align: justify; }
+    .main-content article .readMore {
+      clear: both;
+      text-align: center;
+      padding-bottom: 15px; }
+      .main-content article .readMore a {
+        color: #f00;
+        text-decoration: underline; }
+    .main-content article .articleFooter {
+      clear: both;
+      color: #ccc;
+      padding-top: 15px;
+      border-top: 1px dashed #ccc;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      .main-content article .articleFooter .articleSocial h2 {
+        float: left; }
+      .main-content article .articleFooter .articleSocial a {
+        color: #ccc;
+        font-size: 16px;
+        margin-left: 5px; }
 
 aside {
   flex-basis: 25%;
@@ -364,7 +386,7 @@ html.animations header {
 
 .block .tags {
   clear: both;
-  padding-top: 15px;
+  /* padding-top: $gap/2; */
   color: #f00; }
   .block .tags a {
     color: #666; }
@@ -415,12 +437,16 @@ html.animations header {
   .newCommentForm p label {
     float: left;
     width: 100%;
-    margin-bottom: 15px; }
+    margin-top: 10px;
+    margin-bottom: 10px; }
   .newCommentForm p input {
+    outline-color: #f00; }
+  .newCommentForm p #submit {
     background: #f00;
     border: none;
     color: #fff;
-    height: 30px; }
+    height: 30px;
+    margin-top: 10px; }
   .newCommentForm p textarea {
     outline-color: #f00;
     width: 100%; }

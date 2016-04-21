@@ -152,9 +152,38 @@ blockquote {
 		}
 		.content {
 			float: right;
+			padding-bottom: $gap/2;
 			p {
 				line-height: 1.714em;
 				text-align: justify;
+			}
+		}
+		.readMore {
+			clear: both;
+			text-align: center;			
+			padding-bottom: $gap/2;
+			a {
+				color: $accent;
+				text-decoration: underline;
+			}
+		}
+		.articleFooter {
+			clear: both;
+			color: $gray5;
+			padding-top: $gap/2;
+			border-top: 1px dashed $gray5;
+			display: flex;
+			flex-wrap: wrap;
+    		justify-content: space-between;		
+			.articleSocial {						
+				h2 {
+					float: left;
+				}
+				a {
+					color: $gray5;
+					font-size: 16px;
+					margin-left: 5px;					
+				}
 			}
 		}
 	}
@@ -432,7 +461,7 @@ html.animations {
 // Comments & article tags style
 .block .tags {
 	clear: both;
-    padding-top: $gap/2;
+    /* padding-top: $gap/2; */
     color: $accent;
      a {
      	color: $gray3;
@@ -507,13 +536,18 @@ html.animations {
 		label {
 			float: left;
     		width: 100%;
-    		margin-bottom: $gap/2;
+    		margin-top: $gap/3;	
+    		margin-bottom: $gap/3;
 		}
 		input {
+			outline-color: $accent;
+		}
+		#submit {
 			background: $accent;
 			border: none;
 			color: #fff;
-			height: 30px;
+			height: $gap;
+			margin-top: $gap/3;
 		}
 		textarea {
 			outline-color: $accent;
