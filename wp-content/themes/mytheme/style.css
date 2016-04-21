@@ -386,7 +386,6 @@ html.animations header {
 
 .block .tags {
   clear: both;
-  /* padding-top: $gap/2; */
   color: #f00; }
   .block .tags a {
     color: #666; }
