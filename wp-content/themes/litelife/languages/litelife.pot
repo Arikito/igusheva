@@ -1,0 +1,354 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: LiteLife\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Thu Apr 21 2016 16:38:49 GMT+0300 (Ð¤Ð¸Ð½Ð»ÑÐ½Ð´Ð¸Ñ "
+"(Ð»ÐµÑÐ¾))\n"
+"POT-Revision-Date: Thu Apr 21 2016 16:52:22 GMT+0300 (Ð¤Ð¸Ð½Ð»ÑÐ½Ð´Ð¸Ñ "
+"(Ð»ÐµÑÐ¾))\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: admin <arikito.91@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: ru_RU\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: comment-template.php:31
+msgid "Anonymous"
+msgstr ""
+
+#. translators: %s: number of comments
+#: comment-template.php:874
+#, php-format
+msgid "%s Comment"
+msgid_plural "%s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comment-template.php:880
+msgid "No Comments"
+msgstr ""
+
+#: comment-template.php:882
+msgid "1 Comment"
+msgstr ""
+
+#: comment-template.php:1043
+msgid "Trackback"
+msgstr ""
+
+#: comment-template.php:1044
+msgid "Pingback"
+msgstr ""
+
+#. translators: %s: get_trackback_url()
+#: comment-template.php:1098
+#, php-format
+msgid "Use %s instead if you do not want the value echoed."
+msgstr ""
+
+#. translators: %s: post title
+#: comment-template.php:1476
+#, php-format
+msgid "No Comments<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: %s: post title
+#: comment-template.php:1481
+#, php-format
+msgid "1 Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: 1: Number of comments 2: post title
+#: comment-template.php:1486
+#, php-format
+msgid "%1$s Comment<span class=\"screen-reader-text\"> on %2$s</span>"
+msgid_plural "%1$s Comments<span class=\"screen-reader-text\"> on %2$s</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: post title
+#: comment-template.php:1492
+#, php-format
+msgid "Comments Off<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: comment-template.php:1501
+msgid "Enter your password to view comments."
+msgstr ""
+
+#: comment-template.php:1582 /functions.php:225
+msgid "Reply"
+msgstr ""
+
+#: comment-template.php:1583
+#, php-format
+msgid "Reply to %s"
+msgstr ""
+
+#: comment-template.php:1584
+msgid "Log in to Reply"
+msgstr ""
+
+#: comment-template.php:1695
+msgid "Leave a Comment"
+msgstr ""
+
+#: comment-template.php:1696
+msgid "Log in to leave a Comment"
+msgstr ""
+
+#: comment-template.php:1764
+msgid "Click here to cancel reply."
+msgstr ""
+
+#: comment-template.php:1851 /comment-template.php:2180
+msgid "Leave a Reply"
+msgstr ""
+
+#: comment-template.php:1852 /comment-template.php:2181
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comment-template.php:2148
+msgid "Name"
+msgstr ""
+
+#: comment-template.php:2150
+msgid "Email"
+msgstr ""
+
+#: comment-template.php:2152
+msgid "Website"
+msgstr ""
+
+#: comment-template.php:2156
+#, php-format
+msgid "Required fields are marked %s"
+msgstr ""
+
+#: comment-template.php:2170
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comment-template.php:2172
+#, php-format
+msgid ""
+"<a href=\"%1$s\" aria-label=\"Logged in as %2$s. Edit your profile.\">Logged in "
+"as %2$s</a>. <a href=\"%3$s\">Log out?</a>"
+msgstr ""
+
+#: comment-template.php:2173
+msgid "Your email address will not be published."
+msgstr ""
+
+#: comment-template.php:2186
+msgid "Cancel reply"
+msgstr ""
+
+#: comment-template.php:2187
+msgid "Post Comment"
+msgstr ""
+
+#: comments.php:30 /index.php:32
+msgctxt "comments title"
+msgid "НЕТ КОММЕНТАРИЕВ"
+msgid_plural "НЕТ КОММЕНТАРИЕВ"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:43 /index.php:45
+#, php-format
+msgctxt "comments title"
+msgid "%1$s КОММЕНТАРИЯ"
+msgid_plural "%1$s КОММЕНТАРИЯ"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:55 /index.php:57
+#, php-format
+msgctxt "comments title"
+msgid "%1$s КОММЕНТАРИЕВ"
+msgid_plural "%1$s КОММЕНТАРИЕВ"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:90
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:10
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:17
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions.php:19
+msgid "Widgets in this area will be shown on all posts and pages."
+msgstr ""
+
+#: functions.php:37
+msgid "Блок краткой информации об авторе в сайдбаре"
+msgstr ""
+
+#: functions.php:40
+msgid "О себе"
+msgstr ""
+
+#: functions.php:78
+msgid "Avatar:"
+msgstr ""
+
+#: functions.php:80 /functions.php:85
+msgid "Select"
+msgstr ""
+
+#: functions.php:83
+msgid "Background:"
+msgstr ""
+
+#: functions.php:88
+msgid "Name:"
+msgstr ""
+
+#: functions.php:92
+msgid "Surname:"
+msgstr ""
+
+#: functions.php:96
+msgid "Content:"
+msgstr ""
+
+#: functions.php:108
+msgid "Блок социальных сетей в сайдбаре"
+msgstr ""
+
+#: functions.php:111 /functions.php:114
+msgid "Социальные сети"
+msgstr ""
+
+#: functions.php:156
+msgid "Title:"
+msgstr ""
+
+#: functions.php:167
+msgid "Facebook:"
+msgstr ""
+
+#: functions.php:171
+msgid "VK:"
+msgstr ""
+
+#: functions.php:175
+msgid "Google Plus:"
+msgstr ""
+
+#: functions.php:179
+msgid "Twitter:"
+msgstr ""
+
+#: functions.php:183
+msgid "Instagram:"
+msgstr ""
+
+#: functions.php:212
+msgid "Ссылка на комментарий"
+msgstr ""
+
+#: functions.php:213
+msgid "Edit"
+msgstr ""
+
+#: functions.php:217
+msgid "ttttt<span class='unapproved'>Your comment is awaiting moderation.</span>n"
+msgstr ""
+
+#: functions.php:226
+msgid "Log in to reply."
+msgstr ""
+
+#: index.php:20
+#, php-format
+msgctxt "comments title"
+msgid "%1$s КОММЕНТАРИЙ"
+msgid_plural "%1$s КОММЕНТАРИЙ"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: menu name
+#: nav-menu.php:283 /nav-menu.php:296
+#, php-format
+msgid "The menu name %s conflicts with another menu name. Please try another."
+msgstr ""
+
+#: nav-menu.php:360
+msgid "The given object ID is not that of a menu item."
+msgstr ""
+
+#: nav-menu.php:365
+msgid "Invalid menu ID."
+msgstr ""
+
+#. translators: %d: ID of a post
+#. translators: %d: ID of a post
+#: nav-menu.php:744 /nav-menu.php:819
+#, php-format
+msgid "#%d (no title)"
+msgstr ""
+
+#: nav-menu.php:757
+msgid "Post Type Archive"
+msgstr ""
+
+#: nav-menu.php:778
+msgid "Custom Link"
+msgstr ""
+
+#: searchform.php:16 /searchform.php:17 /searchform.php:19
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:17
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#. Name of the theme
+msgid "LiteLife"
+msgstr ""
+
+#. Author of the theme
+msgid "WebKing team"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://webking.link//"
+msgstr ""
+
+#: comment-template.php:1042 /comment-template.php:2168
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
+#: single.php:5
+msgid "Comment"
+msgstr ""

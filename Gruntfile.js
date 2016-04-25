@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'wp-content/themes/mytheme/style.css': 'wp-content/themes/mytheme/sass/style.scss'
+					'wp-content/themes/litelife/style.css': 'wp-content/themes/litelife/sass/style.scss'
 				}
 			}
 		}
