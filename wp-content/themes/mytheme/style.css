@@ -22,8 +22,8 @@ Version: 1.0
   font-weight: bold;
   src: url("fonts/cambria/Cambria-Bold-Italic.woff") format("woff"), url("fonts/cambria/Cambria-Bold-Italic.ttf") format("truetype"); }
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+	 v2.0 | 20110126
+	 License: none (public domain)
 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -59,12 +59,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.box-shadow, .block, aside .block .follow_me a:hover, footer, header {
+.box-shadow, .block, .main-content .pagination .page-numbers, aside .block .follow_me a:hover, footer, header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); }
 
-.accent, .block, header ul.menu > li, header ul.menu > li:hover, header ul.menu > li.current-menu-item {
+.box-shadow-2, .main-content .pagination .page-numbers:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+
+.accent, .block, .main-content .pagination .page-numbers.current, header ul.menu > li, header ul.menu > li:hover, header ul.menu > li.current-menu-item {
   position: relative; }
-  .accent:before, .block:before, header ul.menu > li:before, header ul.menu > li:hover:before, header ul.menu > li.current-menu-item:before {
+  .accent:before, .block:before, .main-content .pagination .page-numbers.current:before, header ul.menu > li:before, header ul.menu > li:hover:before, header ul.menu > li.current-menu-item:before {
     content: '';
     position: absolute;
     top: 0;
@@ -73,7 +76,7 @@ table {
     bottom: calc(100% - 3px);
     background: #f00; }
 
-.animate, .main-content, aside .block .follow_me a, header ul.menu > li, header ul.menu > li:before {
+.animate, .main-content, .main-content .pagination .page-numbers, aside .block .follow_me a, header ul.menu > li, header ul.menu > li:before, #wp-calendar tbody td {
   -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   -o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -81,11 +84,21 @@ table {
 .hidden {
   display: none !important; }
 
+* {
+  outline: 0; }
+
 html {
   font-family: "Cambria", "serif"; }
   html body {
     background: #fcfcfa;
     font-size: 14px; }
+    html body input[type="button" i],
+    html body input[type="submit" i],
+    html body input[type="reset" i],
+    html body input[type="file" i]::-webkit-file-upload-button,
+    html body button {
+      cursor: pointer;
+      border-radius: .2em; }
 
 a {
   text-decoration: none; }
@@ -190,13 +203,31 @@ blockquote {
       border-top: 1px dashed #ccc;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between; }
-      .main-content article .articleFooter .articleSocial h2 {
-        float: left; }
+      justify-content: space-between;
+      text-transform: uppercase;
+      font-weight: bold; }
       .main-content article .articleFooter .articleSocial a {
         color: #ccc;
         font-size: 16px;
-        margin-left: 5px; }
+        width: 30px;
+        text-align: center;
+        display: inline-block; }
+  .main-content .pagination {
+    display: flex;
+    justify-content: center; }
+    .main-content .pagination .page-numbers {
+      font-family: "Roboto", "OpenSans", "sans-serif";
+      background: #fff;
+      margin: 0 10px;
+      padding: 10px;
+      width: 35px;
+      height: 35px;
+      line-height: 15px;
+      text-align: center;
+      display: inline-block;
+      color: #444; }
+      .main-content .pagination .page-numbers.prev, .main-content .pagination .page-numbers.next {
+        width: auto; }
 
 aside {
   flex-basis: 25%;
@@ -336,8 +367,7 @@ html.animations header {
     #wp-calendar tbody td:hover {
       background: #f00;
       color: #fff;
-      cursor: pointer;
-      transition: all 0.4s ease; }
+      cursor: pointer; }
     #wp-calendar tbody td a {
       color: #f00;
       font-weight: bolder; }
@@ -350,12 +380,12 @@ html.animations header {
     font-weight: bolder; }
 
 .menu-main-container {
-  margin-right: 40px; }
+  margin-right: 60px; }
 
 .searchWraper {
   display: none;
   position: absolute;
-  top: 0px;
+  top: 0;
   right: 15px;
   background: #fff;
   height: 90px; }
@@ -375,10 +405,12 @@ html.animations header {
       width: calc(100% - 90px); }
 
 .searchBtnsWraper {
-  width: 50px;
+  width: 60px;
+  padding: 0 15px;
   position: absolute;
-  right: 0;
-  top: 33px; }
+  right: 15px;
+  top: 33px;
+  text-align: center; }
   .searchBtnsWraper i {
     cursor: pointer; }
   .searchBtnsWraper .closeSearchBtn {
