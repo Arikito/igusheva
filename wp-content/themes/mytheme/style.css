@@ -65,9 +65,9 @@ table {
 .box-shadow-2, .main-content .pagination .page-numbers:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
 
-.accent, .block, .main-content .pagination .page-numbers.current, header ul.menu > li, header ul.menu > li:hover, header ul.menu > li.current-menu-item {
+.accent, .block, .main-content .pagination .page-numbers.current, header .header_right ul.menu > li, header .header_right ul.menu > li:hover, header .header_right ul.menu > li.current-menu-item {
   position: relative; }
-  .accent:before, .block:before, .main-content .pagination .page-numbers.current:before, header ul.menu > li:before, header ul.menu > li:hover:before, header ul.menu > li.current-menu-item:before {
+  .accent:before, .block:before, .main-content .pagination .page-numbers.current:before, header .header_right ul.menu > li:before, header .header_right ul.menu > li:hover:before, header .header_right ul.menu > li.current-menu-item:before {
     content: '';
     position: absolute;
     top: 0;
@@ -76,7 +76,7 @@ table {
     bottom: calc(100% - 3px);
     background: #f00; }
 
-.animate, .main-content, .main-content .pagination .page-numbers, aside .block .follow_me a, header ul.menu > li, header ul.menu > li:before, #wp-calendar tbody td {
+.animate, .main-content, .main-content .pagination .page-numbers, aside .block .follow_me a, header .header_right ul.menu > li, header .header_right ul.menu > li:before, #wp-calendar tbody td {
   -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   -o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -320,28 +320,60 @@ header {
     width: 147px;
     text-indent: -9999px;
     background: url("img/logo.png"); }
-  header ul.menu > li {
-    display: block;
-    float: left;
-    box-sizing: border-box;
-    position: relative; }
-    header ul.menu > li a {
-      padding: 0 15px;
+  header .header_right {
+    display: flex;
+    align-items: center; }
+    header .header_right ul.menu > li {
       display: block;
-      line-height: 90px;
-      font-family: "Roboto", "OpenSans", "sans-serif";
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #444; }
-    header ul.menu > li:before {
-      background: transparent; }
-    header ul.menu > li:hover {
-      background: #fcfcfa; }
-    header ul.menu > li.current-menu-item {
-      background: #fcfcfa;
-      font-weight: bold; }
-  header ul.menu .sub-menu {
-    display: none; }
+      float: left;
+      box-sizing: border-box;
+      position: relative; }
+      header .header_right ul.menu > li a {
+        padding: 0 15px;
+        display: block;
+        line-height: 90px;
+        font-family: "Roboto", "OpenSans", "sans-serif";
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #444; }
+      header .header_right ul.menu > li:before {
+        background: transparent; }
+      header .header_right ul.menu > li:hover {
+        background: #fcfcfa; }
+      header .header_right ul.menu > li.current-menu-item {
+        background: #fcfcfa;
+        font-weight: bold; }
+    header .header_right ul.menu .sub-menu {
+      display: none; }
+    header .header_right .searchWraper {
+      display: none;
+      position: absolute;
+      right: 75px;
+      background: #fff;
+      line-height: 90px; }
+      header .header_right .searchWraper .search-form {
+        display: flex; }
+        header .header_right .searchWraper .search-form button {
+          border: none;
+          background: none;
+          outline: none; }
+        header .header_right .searchWraper .search-form i {
+          cursor: pointer; }
+        header .header_right .searchWraper .search-form label {
+          flex-grow: 1; }
+          header .header_right .searchWraper .search-form label .search-field {
+            border: none;
+            border-bottom: 1px solid #888;
+            outline: none;
+            width: 100%; }
+    header .header_right .searchBtnsWraper {
+      width: 60px;
+      padding: 0 15px;
+      text-align: center; }
+      header .header_right .searchBtnsWraper i {
+        cursor: pointer; }
+      header .header_right .searchBtnsWraper .closeSearchBtn {
+        display: none; }
 
 html.animations .main-content article.block {
   top: 100px;
@@ -364,57 +396,20 @@ html.animations header {
     line-height: 20px;
     text-align: center;
     border-radius: 50%; }
-    #wp-calendar tbody td:hover {
+    #wp-calendar tbody td:not(.pad):hover {
       background: #f00;
       color: #fff;
       cursor: pointer; }
-    #wp-calendar tbody td a {
+    #wp-calendar tbody td:not(.pad) a {
       color: #f00;
       font-weight: bolder; }
-      #wp-calendar tbody td a:hover {
+      #wp-calendar tbody td:not(.pad) a:hover {
         color: #fff; }
   #wp-calendar tfoot #next {
     text-align: right; }
   #wp-calendar tfoot a {
     color: #f00;
     font-weight: bolder; }
-
-.menu-main-container {
-  margin-right: 60px; }
-
-.searchWraper {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 15px;
-  background: #fff;
-  height: 90px; }
-  .searchWraper .search-form {
-    height: 30px;
-    padding-top: 25px; }
-    .searchWraper .search-form button {
-      border: none;
-      background: none;
-      outline: none; }
-    .searchWraper .search-form i {
-      cursor: pointer; }
-    .searchWraper .search-form .search-field {
-      border: none;
-      border-bottom: 1px solid #888;
-      outline: none;
-      width: calc(100% - 90px); }
-
-.searchBtnsWraper {
-  width: 60px;
-  padding: 0 15px;
-  position: absolute;
-  right: 15px;
-  top: 33px;
-  text-align: center; }
-  .searchBtnsWraper i {
-    cursor: pointer; }
-  .searchBtnsWraper .closeSearchBtn {
-    display: none; }
 
 .block .tags {
   clear: both;

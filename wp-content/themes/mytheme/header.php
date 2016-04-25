@@ -16,8 +16,10 @@
 	<header>
 		<div class="page-wrap">
 			<a href="<?php echo home_url(); ?>" class="logo"><?php bloginfo('name');?></a>
-			<?php wp_nav_menu();?>			
-			<?php get_search_form();?>
+			<div class="header_right">
+				<?php wp_nav_menu();?>
+				<?php get_search_form();?>
+			</div>
 		</div>
 	</header>
 	<div class="page-wrap"> 

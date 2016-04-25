@@ -188,9 +188,9 @@ blockquote {
 			border-top: 1px dashed $gray5;
 			display: flex;
 			flex-wrap: wrap;
-    		justify-content: space-between;
-    		text-transform: uppercase;
-    		font-weight: bold;
+			justify-content: space-between;
+			text-transform: uppercase;
+			font-weight: bold;
 			.articleSocial {
 				a {
 					color: $gray5;
@@ -356,39 +356,82 @@ header {
 		text-indent: -9999px;
 		background: url('img/logo.png');
 	}
-	ul.menu {
-		> li {
-			@extend .animate;
-			@extend .accent;
-			display: block;
-			float: left;
-			box-sizing: border-box;
-			position: relative;
-			a {
-				padding: 0 $gap/2;
-				display: block;
-				line-height: 90px;
-				font-family: $f_sans_serif;
-				text-decoration: none;
-				text-transform: uppercase;
-				color: $gray2;
-			}
-			&:before {
+	.header_right {
+		display: flex;
+		align-items: center;
+		ul.menu {
+			> li {
 				@extend .animate;
-				background: transparent;
-			}
-			&:hover {
 				@extend .accent;
-				background: $gray1;
+				display: block;
+				float: left;
+				box-sizing: border-box;
+				position: relative;
+				a {
+					padding: 0 $gap/2;
+					display: block;
+					line-height: 90px;
+					font-family: $f_sans_serif;
+					text-decoration: none;
+					text-transform: uppercase;
+					color: $gray2;
+				}
+				&:before {
+					@extend .animate;
+					background: transparent;
+				}
+				&:hover {
+					@extend .accent;
+					background: $gray1;
+				}
+				&.current-menu-item {
+					@extend .accent;
+					background: $gray1;
+					font-weight: bold;
+				}
 			}
-			&.current-menu-item {
-				@extend .accent;
-				background: $gray1;
-				font-weight: bold;
+			.sub-menu {
+				display: none;
 			}
 		}
-		.sub-menu {
+		// Search styles
+		.searchWraper {
 			display: none;
+			position: absolute;
+			right: $gap*2.5;
+			background: $white;   
+			line-height: $gap*3;
+			.search-form {
+				display: flex;
+				button {
+					border: none;
+					background: none;
+					outline: none;
+				}
+				i {
+					cursor: pointer;
+				}
+				label {
+					flex-grow: 1;
+					.search-field {
+						border: none;
+						border-bottom: 1px solid $gray4;
+						outline: none;
+						width: 100%;
+					}
+				}
+			}
+		}
+		.searchBtnsWraper {
+			width: $gap*2;
+			padding: 0 $gap/2;
+			text-align: center;
+			i {
+				cursor: pointer;
+			}
+			.closeSearchBtn {
+				display: none;
+			}
 		}
 	}
 }
@@ -429,12 +472,12 @@ html.animations {
 			line-height: 20px;
 			text-align: center; 
 			border-radius: 50%;  
-			&:hover {
+			&:not(.pad):hover {
 				background: $accent;
 				color: $white;
 				cursor: pointer;
 			}
-			a {
+			&:not(.pad) a {
 				color: $accent;
 				font-weight: bolder;
 				&:hover {
@@ -454,62 +497,13 @@ html.animations {
 	}
 }
 
-//Search styles
-.menu-main-container{
-	margin-right: $gap*2;
-}
-.searchWraper {
-	display: none;
-	position: absolute;
-    top: 0;
-    right: $gap/2;
-    background: #fff;    
-    height: 90px;
-   
-	.search-form {
-		height: 30px;
-		padding-top: 25px;		
-		
-		button {
-			border: none;
-			background: none;
-			outline: none;		
-		}
-		i {
-			cursor: pointer;
-		}
-		.search-field {
-			border: none;
-			border-bottom: 1px solid $gray4;
-			outline: none;
-			width: calc(100% - 90px);		
-		}	
-	}
-}
-
-.searchBtnsWraper {
-	width: $gap*2;
-	padding: 0 $gap/2;
-    position: absolute;
-    right: $gap/2;
-    top: 33px;
-    text-align: center;
-    i {
-    	cursor: pointer;
-    }
-	.closeSearchBtn {
-		display: none;
-	}
-}
-
-
 // Comments & article tags style
 .block .tags {
 	clear: both;
-    color: $accent;
-     a {
-     	color: $gray3;
-     }
+	color: $accent;
+	 a {
+		color: $gray3;
+	 }
 }
 
 #comments {
@@ -531,11 +525,11 @@ html.animations {
 				flex-direction: column;
 				justify-content: flex-end;
 				margin-left: $gap/2;		
-			    font-weight: bold;
-			    color: $gray2;
-			    .authorOfComment {
-			    	font-size: 1.5em;
-			    }
+				font-weight: bold;
+				color: $gray2;
+				.authorOfComment {
+					font-size: 1.5em;
+				}
 				.timeOfComment {
 					font-size: 0.85em;
 					margin-top: $gap/6;
@@ -554,9 +548,9 @@ html.animations {
 		}		
 		p {
 			margin-top: $gap/2;
-   			margin-bottom: $gap/2;
-   			text-align: justify;
-   			line-height: 1.5em;   			
+			margin-bottom: $gap/2;
+			text-align: justify;
+			line-height: 1.5em;   			
 		}
 		.comment {
 			margin-top: $gap/2;
@@ -579,9 +573,9 @@ html.animations {
 		margin-top: 5px;
 		label {
 			float: left;
-    		width: 100%;
-    		margin-top: $gap/3;	
-    		margin-bottom: $gap/3;
+			width: 100%;
+			margin-top: $gap/3;	
+			margin-bottom: $gap/3;
 		}
 		input {
 			outline-color: $accent;
