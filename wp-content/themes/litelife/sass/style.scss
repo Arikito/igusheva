@@ -183,7 +183,10 @@ blockquote {
 			border-top: 1px dashed $gray5;
 			display: flex;
 			flex-wrap: wrap;
-    		justify-content: space-between;		
+    		justify-content: space-between;
+    			h2 {
+    				text-transform: uppercase;    				
+    			}
 			.articleSocial {						
 				h2 {
 					float: left;
@@ -479,6 +482,8 @@ html.animations {
 #comments {
 	h2 {
 		margin-bottom: $gap/2;
+		text-transform: uppercase;
+		color: $gray5;
 	}
 	.comment-list {
 		a {

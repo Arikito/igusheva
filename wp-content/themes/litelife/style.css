@@ -200,6 +200,8 @@ blockquote {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between; }
+      .main-content article .articleFooter h2 {
+        text-transform: uppercase; }
       .main-content article .articleFooter .articleSocial h2 {
         float: left; }
       .main-content article .articleFooter .articleSocial a {
@@ -400,7 +402,9 @@ html.animations header {
     color: #666; }
 
 #comments h2 {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #ccc; }
 #comments .comment-list a {
   color: #f00; }
 #comments .comment-list .comment-author {
