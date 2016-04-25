@@ -72,6 +72,10 @@ html {
 }
 a {
 	text-decoration: none;
+	color: $pre_accent;
+	&:hover {
+		color: $accent;
+	}
 }
 blockquote {
 	display: block;
@@ -186,7 +190,6 @@ blockquote {
 			text-align: center;			
 			padding-bottom: $gap/2;
 			a {
-				color: $accent;
 				text-decoration: underline;
 			}
 		}
@@ -200,14 +203,15 @@ blockquote {
 			justify-content: space-between;
 			text-transform: uppercase;
 			font-weight: bold;
+			a {
+				color: $gray5;
+			}
 			.articleSocial {
 				a {
-					
-					color: $gray5;
 					font-size: 16px;
 					width: $gap;
 					text-align: center;
-					display: inline-block;				
+					display: inline-block;
 				}
 			}
 		}
@@ -349,6 +353,7 @@ footer {
 	background: $white;
 	height:  $gap;
 	text-align: center;
+	color: $gray3;
 	@extend .box-shadow;
 }
 // !footer
@@ -486,13 +491,13 @@ html.animations {
 				background: $accent;
 				color: $white;
 				cursor: pointer;
-			}
-			&:not(.pad) a {
-				color: $accent;
-				font-weight: bolder;
-				&:hover {
+				a {
 					color: $white;
 				}
+			}			
+			&:not(.pad) a {
+				color: $accent;
+				font-weight: bolder;				
 			}
 		}
 	}
@@ -543,8 +548,9 @@ html.animations {
 					font-size: 1.5em;
 				}
 				.timeOfComment {
-					font-size: 0.85em;
 					margin-top: $gap/6;
+					color: $gray4;
+					font-weight: 300;
 				}
 			}
 		}

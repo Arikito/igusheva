@@ -212,7 +212,7 @@ function custom_comments($comment, $args, $depth) {
 		        	<span class="meta-sep">|</span>
 		        	<?php echo get_comment_time(); ?>
 		        	<span class="meta-sep">|</span>
-		        	<a href="#comment-<?php echo get_comment_ID(); ?>" title="Permalink to this comment"><?php echo __('Permalink', 'litelife');?></a>
+		        	<a href="#comment-<?php echo get_comment_ID(); ?>" title="<?php echo __('Permalink to this comment', 'litelife');?>"><?php echo __('Permalink', 'litelife');?></a>
 		        	<?php edit_comment_link(__('Edit'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>'); ?>
 		        </div>
 	        </div>

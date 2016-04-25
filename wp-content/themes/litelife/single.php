@@ -9,7 +9,7 @@
 			<div class="articleFooter">
 				<div class="tags"><?php the_tags(); ?></div>
 				<div class="articleSocial">
-					<h2>ПОДЕЛИТЬСЯ:</h2> 
+					<span><?php echo __('Share:', 'litelife') ?></span> 
 					<a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&title=<?php the_title();?>" class="facebook" target="_blank" title="facebook">
 					<i class="fa fa-facebook"></i></a>
 					<a href="http://vk.com/share.php?url=http://mysite.comhttp://vk.com/share.php?url=<?php the_permalink();?>&title=<?php the_title();?>" class="vk" target="_blank" title="vk"><i class="fa fa-vk"></i></a>
