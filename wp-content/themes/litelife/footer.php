@@ -1,5 +1,8 @@
 		<footer>
-			<p><?php bloginfo('name') ?> - &copy; <?php echo date('Y');?></p>
+			<p>
+				<?php bloginfo('name') ?> - &copy; <?php echo date('Y');?>
+				Все права защищены. При копировании контента указывайте ссылку на источник!
+			</p>
 		</footer>
 		<?php wp_footer(); ?>
 	</div>

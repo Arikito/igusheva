@@ -23,6 +23,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .box-shadow {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, .05);	
 }
+.box-shadow-2 {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
 .accent {
 	position: relative;
 	&:before {
@@ -49,11 +52,22 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
 // global styles
+* {
+	outline: 0;
+}
 html {
 	font-family: $f_serif;
 	body {
 		background: $gray1;
 		font-size: 14px;
+		input[type="button" i],
+		input[type="submit" i],
+		input[type="reset" i],
+		input[type="file" i]::-webkit-file-upload-button,
+		button {
+			cursor: pointer;
+			border-radius: .2em;
+		}
 	}
 }
 a {
@@ -183,19 +197,46 @@ blockquote {
 			border-top: 1px dashed $gray5;
 			display: flex;
 			flex-wrap: wrap;
-    		justify-content: space-between;
-    			h2 {
-    				text-transform: uppercase;    				
-    			}
-			.articleSocial {						
-				h2 {
-					float: left;
-				}
+			justify-content: space-between;
+			text-transform: uppercase;
+			font-weight: bold;
+			.articleSocial {
 				a {
+					
 					color: $gray5;
 					font-size: 16px;
-					margin-left: 5px;					
+					width: $gap;
+					text-align: center;
+					display: inline-block;				
 				}
+			}
+		}
+	}
+	.pagination {
+		display: flex;
+		justify-content: center;
+		.page-numbers {
+			@extend .box-shadow;
+			@extend .animate;
+			font-family: $f_sans_serif;
+			background: $white;
+			margin: 0 $gap/3;
+			padding: $gap/3;
+			width: $gap/3*2+$gap/2;
+			height: $gap/3*2+$gap/2;
+			line-height: $gap/2;
+			text-align: center;
+			display: inline-block;
+			color: $gray2;
+			&.prev,
+			&.next {
+				width: auto;
+			}
+			&.current {
+				@extend .accent;
+			}
+			&:hover {
+				@extend .box-shadow-2;
 			}
 		}
 	}
@@ -325,39 +366,82 @@ header {
 		text-indent: -9999px;
 		background: url('img/logo.png');
 	}
-	ul.menu {
-		> li {
-			@extend .animate;
-			@extend .accent;
-			display: block;
-			float: left;
-			box-sizing: border-box;
-			position: relative;
-			a {
-				padding: 0 $gap/2;
-				display: block;
-				line-height: 90px;
-				font-family: $f_sans_serif;
-				text-decoration: none;
-				text-transform: uppercase;
-				color: $gray2;
-			}
-			&:before {
+	.header_right {
+		display: flex;
+		align-items: center;
+		ul.menu {
+			> li {
 				@extend .animate;
-				background: transparent;
-			}
-			&:hover {
 				@extend .accent;
-				background: $gray1;
+				display: block;
+				float: left;
+				box-sizing: border-box;
+				position: relative;
+				a {
+					padding: 0 $gap/2;
+					display: block;
+					line-height: 90px;
+					font-family: $f_sans_serif;
+					text-decoration: none;
+					text-transform: uppercase;
+					color: $gray2;
+				}
+				&:before {
+					@extend .animate;
+					background: transparent;
+				}
+				&:hover {
+					@extend .accent;
+					background: $gray1;
+				}
+				&.current-menu-item {
+					@extend .accent;
+					background: $gray1;
+					font-weight: bold;
+				}
 			}
-			&.current-menu-item {
-				@extend .accent;
-				background: $gray1;
-				font-weight: bold;
+			.sub-menu {
+				display: none;
 			}
 		}
-		.sub-menu {
+		// Search styles
+		.searchWraper {
 			display: none;
+			position: absolute;
+			right: $gap*2.5;
+			background: $white;   
+			line-height: $gap*3;
+			.search-form {
+				display: flex;
+				button {
+					border: none;
+					background: none;
+					outline: none;
+				}
+				i {
+					cursor: pointer;
+				}
+				label {
+					flex-grow: 1;
+					.search-field {
+						border: none;
+						border-bottom: 1px solid $gray4;
+						outline: none;
+						width: 100%;
+					}
+				}
+			}
+		}
+		.searchBtnsWraper {
+			width: $gap*2;
+			padding: 0 $gap/2;
+			text-align: center;
+			i {
+				cursor: pointer;
+			}
+			.closeSearchBtn {
+				display: none;
+			}
 		}
 	}
 }
@@ -392,22 +476,22 @@ html.animations {
 	}
 	tbody {
 		td {
+			@extend .animate;
 			width: 20px;
 			height: 20px;
 			line-height: 20px;
 			text-align: center; 
 			border-radius: 50%;  
-			&:hover {
-				background: #f00;
-				color: #fff;
+			&:not(.pad):hover {
+				background: $accent;
+				color: $white;
 				cursor: pointer;
-				transition: all.4s ease;
 			}
-			a {
-				color: #f00; 
+			&:not(.pad) a {
+				color: $accent;
 				font-weight: bolder;
 				&:hover {
-				color: #fff;
+					color: $white;
 				}
 			}
 		}
@@ -423,60 +507,13 @@ html.animations {
 	}
 }
 
-//Search styles
-.menu-main-container{
-	margin-right: 40px;
-}
-.searchWraper {
-	display: none;
-	position: absolute;
-    top: 0px;
-    right: 15px;
-    background: #fff;    
-    height: 90px;
-   
-	.search-form {
-		height: 30px;
-		padding-top: 25px;		
-		
-		button {
-			border: none;
-			background: none;
-			outline: none;		
-		}
-		i {
-			cursor: pointer;
-		}
-		.search-field {
-			border: none;
-			border-bottom: 1px solid $gray4;
-			outline: none;
-			width: calc(100% - 90px);		
-		}	
-	}
-}
-
-.searchBtnsWraper {
-	width: 50px;
-    position: absolute;
-    right: 0;
-    top: 33px;
-    i {
-    	cursor: pointer;
-    }
-	.closeSearchBtn {
-		display: none;
-	}
-}
-
-
 // Comments & article tags style
 .block .tags {
 	clear: both;
-    color: $accent;
-     a {
-     	color: $gray3;
-     }
+	color: $accent;
+	 a {
+		color: $gray3;
+	 }
 }
 
 #comments {
@@ -500,11 +537,11 @@ html.animations {
 				flex-direction: column;
 				justify-content: flex-end;
 				margin-left: $gap/2;		
-			    font-weight: bold;
-			    color: $gray2;
-			    .authorOfComment {
-			    	font-size: 1.5em;
-			    }
+				font-weight: bold;
+				color: $gray2;
+				.authorOfComment {
+					font-size: 1.5em;
+				}
 				.timeOfComment {
 					font-size: 0.85em;
 					margin-top: $gap/6;
@@ -523,9 +560,9 @@ html.animations {
 		}		
 		p {
 			margin-top: $gap/2;
-   			margin-bottom: $gap/2;
-   			text-align: justify;
-   			line-height: 1.5em;   			
+			margin-bottom: $gap/2;
+			text-align: justify;
+			line-height: 1.5em;   			
 		}
 		.comment {
 			margin-top: $gap/2;
@@ -548,9 +585,9 @@ html.animations {
 		margin-top: 5px;
 		label {
 			float: left;
-    		width: 100%;
-    		margin-top: $gap/3;	
-    		margin-bottom: $gap/3;
+			width: 100%;
+			margin-top: $gap/3;	
+			margin-bottom: $gap/3;
 		}
 		input {
 			outline-color: $accent;

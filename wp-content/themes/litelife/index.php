@@ -10,7 +10,7 @@
 				</div>
 				<div class="readMore"><a href="<?php the_permalink();?>">Читать далее</a></div>
 				<div class="articleFooter">
-					<h2 class="comments-title">
+					<a class="comments-title">
 					<?php
 						$comments_number = get_comments_number();
 						$strNumbLast =  substr($comments_number, -1);
@@ -22,9 +22,9 @@
 								number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 						}
 					?>
-					</h2>
+					</a>
 					<div class="articleSocial">
-						<h2>ПОДЕЛИТЬСЯ:</h2> 
+						<span>Поделиться:</span>
 						<a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&title=<?php the_title();?>" class="facebook" target="_blank" title="facebook">
 						<i class="fa fa-facebook"></i></a>
 						<a href="http://vk.com/share.php?url=http://mysite.comhttp://vk.com/share.php?url=<?php the_permalink();?>&title=<?php the_title();?>" class="vk" target="_blank" title="vk"><i class="fa fa-vk"></i></a>
@@ -37,6 +37,7 @@
 	}else{
 		echo "Пусто";
 	}?>
+	<div class="pagination"><?php echo paginate_links(array('format' => '?paged=%#%', 'show_all' => false, 'prev_next' => true)); ?></div>
 </div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
