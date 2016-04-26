@@ -1,0 +1,517 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Blogim\n"
+"POT-Creation-Date: 2016-04-25 18:29+0530\n"
+"PO-Revision-Date: 2015-11-19 15:52+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: comments.php:3
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:19
+#, php-format
+msgid "One %2$s"
+msgid_plural "%1$s %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:21
+msgid "Comments"
+msgstr ""
+
+#: comments.php:27 comments.php:42
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:28 comments.php:43
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:29 comments.php:44
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:53
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:13
+#, php-format
+msgid "Powered by %s"
+msgstr ""
+
+#: functions.php:33
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:40
+msgid "read more"
+msgstr ""
+
+#: functions.php:53
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:54
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:74 sidebar.php:2
+msgid "Main"
+msgstr ""
+
+#: functions.php:83
+msgid "Single-page"
+msgstr ""
+
+#: functions.php:87
+msgid "Single-post"
+msgstr ""
+
+#: functions.php:91
+msgid "Category-page"
+msgstr ""
+
+#: functions.php:95
+msgid "404-page"
+msgstr ""
+
+#: functions.php:99
+msgid "Search-page"
+msgstr ""
+
+#: functions.php:112
+msgid "Footer Widget 2"
+msgstr ""
+
+#: functions.php:116
+msgid "Footer Widget 3"
+msgstr ""
+
+#: functions.php:120
+msgid "Footer Widget 4"
+msgstr ""
+
+#: functions/breadcrumbs.php:11
+msgid "Home"
+msgstr ""
+
+#: functions/breadcrumbs.php:12
+msgid "Browse Category "
+msgstr ""
+
+#: functions/breadcrumbs.php:13
+msgid "Archive for "
+msgstr ""
+
+#: functions/breadcrumbs.php:14
+msgid "Search Results for "
+msgstr ""
+
+#: functions/breadcrumbs.php:15
+msgid "Posts Tagged "
+msgstr ""
+
+#: functions/breadcrumbs.php:16
+msgid "Articles Posted by "
+msgstr ""
+
+#: functions/breadcrumbs.php:17
+msgid "Error 404"
+msgstr ""
+
+#: functions/breadcrumbs.php:137
+msgid "Page "
+msgstr ""
+
+#: functions/comment.php:11
+msgid "Pingback:"
+msgstr ""
+
+#: functions/comment.php:11 functions/comment.php:38
+msgid "Edit"
+msgstr ""
+
+#: functions/comment.php:28
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#: functions/comment.php:34
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions/comment.php:41
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions/comment.php:48
+msgid "reply"
+msgstr ""
+
+#: functions/customization.php:33
+msgid "Full Width"
+msgstr ""
+
+#: functions/customization.php:34
+msgid "Boxed"
+msgstr ""
+
+#: functions/customization.php:35
+msgid "Framed"
+msgstr ""
+
+#: functions/customization.php:36
+msgid "Rounded"
+msgstr ""
+
+#: functions/customization.php:37
+msgid "Header 1"
+msgstr ""
+
+#: functions/customization.php:38 functions/settings/layout.php:34
+#: functions/settings/layout.php:97 functions/settings/layout.php:127
+msgid "None"
+msgstr ""
+
+#: functions/customization.php:39 functions/settings/layout.php:35
+msgid "Tile"
+msgstr ""
+
+#: functions/customization.php:40 functions/settings/layout.php:36
+msgid "Carousel"
+msgstr ""
+
+#: functions/customization.php:41 functions/settings/layout.php:37
+msgid "Slideshow"
+msgstr ""
+
+#: functions/customization.php:42 functions/settings/layout.php:65
+msgid "Full Post then Grid Style"
+msgstr ""
+
+#: functions/customization.php:43 functions/settings/layout.php:66
+msgid "Full Post then List Style"
+msgstr ""
+
+#: functions/customization.php:44 functions/settings/layout.php:67
+msgid "Full Post Style"
+msgstr ""
+
+#: functions/customization.php:45 functions/settings/layout.php:68
+msgid "Grid Style"
+msgstr ""
+
+#: functions/customization.php:46 functions/settings/layout.php:69
+msgid "List Style"
+msgstr ""
+
+#: functions/customization.php:47 functions/settings/layout.php:98
+msgid "Right Sidebar"
+msgstr ""
+
+#: functions/customization.php:48 functions/settings/layout.php:99
+msgid "Left Sidebar"
+msgstr ""
+
+#: functions/customization.php:49 functions/settings/layout.php:128
+msgid "Column : 50% + 25% + 25%"
+msgstr ""
+
+#: functions/customization.php:50 functions/settings/layout.php:129
+msgid "Column : 25% + 25% + 25% + 25%"
+msgstr ""
+
+#: functions/customization.php:51 functions/settings/layout.php:130
+msgid "Column : 25% + 25% + 50%"
+msgstr ""
+
+#: functions/customization.php:52 functions/settings/layout.php:131
+msgid "Column : 33% + 33% + 33%"
+msgstr ""
+
+#: functions/customization.php:53 functions/settings/layout.php:132
+msgid "Column : 50% + 50%"
+msgstr ""
+
+#: functions/customization.php:54
+msgid "Copyright and Menu"
+msgstr ""
+
+#: functions/customization.php:55
+msgid "Copyright Only"
+msgstr ""
+
+#: functions/customization.php:56
+msgid "Menu Only"
+msgstr ""
+
+#: functions/customization.php:57
+msgid "Copyright and Menu Center"
+msgstr ""
+
+#: functions/customization.php:58
+msgid "Yes"
+msgstr ""
+
+#: functions/customization.php:59
+msgid "No"
+msgstr ""
+
+#: functions/metabox.php:3
+msgid "Post Options"
+msgstr ""
+
+#: functions/metabox.php:4
+msgid "Page Options"
+msgstr ""
+
+#: functions/metabox.php:16
+msgid "Set as featured ?"
+msgstr ""
+
+#: functions/metabox.php:22 functions/metabox.php:41
+msgid "Set as full width ?"
+msgstr ""
+
+#: functions/metabox.php:35
+msgid "Hide page title ?"
+msgstr ""
+
+#: functions/settings/content.php:6
+msgid "Page 404"
+msgstr ""
+
+#: functions/settings/content.php:8
+msgid "Choose page as content for 404 page"
+msgstr ""
+
+#: functions/settings/content.php:22
+msgid "Choose page"
+msgstr ""
+
+#: functions/settings/general.php:7
+msgid "General"
+msgstr ""
+
+#: functions/settings/general.php:8
+msgid "Customize general theme settings"
+msgstr ""
+
+#: functions/settings/layout.php:5
+msgid "Layout"
+msgstr ""
+
+#: functions/settings/layout.php:6
+msgid "layout options"
+msgstr ""
+
+#: functions/settings/layout.php:14
+msgid "Hero Layout"
+msgstr ""
+
+#: functions/settings/layout.php:16
+msgid "Choose one of three layout style."
+msgstr ""
+
+#: functions/settings/layout.php:31 functions/settings/layout.php:62
+#: functions/settings/layout.php:94 functions/settings/layout.php:124
+msgid "Choose Layout"
+msgstr ""
+
+#: functions/settings/layout.php:45
+msgid "Content Layout"
+msgstr ""
+
+#: functions/settings/layout.php:47 functions/settings/layout.php:109
+msgid "Choose one of five layout style."
+msgstr ""
+
+#: functions/settings/layout.php:77
+msgid "Sidebar Layout"
+msgstr ""
+
+#: functions/settings/layout.php:79
+msgid "Choose one of two layout style."
+msgstr ""
+
+#: functions/settings/layout.php:107
+msgid "Footer Widget Layout"
+msgstr ""
+
+#: functions/settings/social.php:6
+msgid "Social Account"
+msgstr ""
+
+#: functions/settings/social.php:8
+msgid "Enter the URL of your social account.Leave it empty to hide the icon"
+msgstr ""
+
+#: functions/settings/social.php:12 views/part/social.php:6
+msgid "Facebook"
+msgstr ""
+
+#: functions/settings/social.php:13 views/part/social.php:9
+msgid "Twitter"
+msgstr ""
+
+#: functions/settings/styling.php:5
+msgid "Styling"
+msgstr ""
+
+#: functions/settings/styling.php:6
+msgid "styling options"
+msgstr ""
+
+#: functions/settings/styling.php:29
+msgid "Main Color"
+msgstr ""
+
+#: searchform.php:1
+msgid "Search"
+msgstr ""
+
+#: searchform.php:3
+msgid "type & hit enter to search"
+msgstr ""
+
+#: sidebar.php:3
+msgid "Single Page"
+msgstr ""
+
+#: sidebar.php:4
+msgid "Single Post"
+msgstr ""
+
+#: sidebar.php:5
+msgid "Category Page"
+msgstr ""
+
+#: sidebar.php:6
+msgid "Search Result"
+msgstr ""
+
+#: sidebar.php:7
+msgid "404 Page"
+msgstr ""
+
+#: views/main/detail-attachment.php:21 views/main/full-post-grid.php:71
+#: views/main/full-post-list.php:65 views/main/full-post.php:33
+#: views/main/grid.php:39 views/main/list.php:34 views/main/single-page.php:42
+#: views/main/single-post.php:139
+msgid "Sorry, no posts matched your criteria. Try something else. "
+msgstr ""
+
+#: views/main/full-post-grid.php:1 views/main/full-post-list.php:1
+#: views/main/full-post.php:1 views/main/grid.php:1 views/main/list.php:1
+msgid "Latest Posts"
+msgstr ""
+
+#: views/main/full-post-grid.php:34 views/main/full-post-list.php:34
+#: views/main/full-post.php:21 views/main/single-post.php:21
+msgid "No Comments"
+msgstr ""
+
+#: views/main/full-post-grid.php:34 views/main/full-post-list.php:34
+#: views/main/full-post.php:21 views/main/single-post.php:21
+msgid "1 Comment"
+msgstr ""
+
+#: views/main/full-post-grid.php:34 views/main/full-post-list.php:34
+#: views/main/full-post.php:21 views/main/single-post.php:21
+msgid "% Comments"
+msgstr ""
+
+#: views/main/full-post-grid.php:39 views/main/full-post-list.php:39
+#: views/main/full-post.php:26
+msgid "Read More"
+msgstr ""
+
+#: views/main/single-page.php:22 views/main/single-post.php:33
+msgid "Pages:"
+msgstr ""
+
+#: views/main/single-post.php:41
+msgid "Tags"
+msgstr ""
+
+#: views/main/single-post.php:86
+msgid "You Might Also Like"
+msgstr ""
+
+#: views/main/single-post.php:123
+msgid "No related post available"
+msgstr ""
+
+#: views/page-title.php:6
+msgid "Search result for"
+msgstr ""
+
+#: views/page-title.php:9
+msgid "Browse Category"
+msgstr ""
+
+#: views/page-title.php:14
+msgid "Browse post by author"
+msgstr ""
+
+#: views/page-title.php:17
+msgid "Browse tag"
+msgstr ""
+
+#: views/page-title.php:26
+msgid "Browse archive"
+msgstr ""
+
+#: views/part/pagination.php:3
+msgid "<i class=\"fa fa-angle-left\"></i>Older Entries"
+msgstr ""
+
+#: views/part/pagination.php:6
+msgid "Newer Entries<i class=\"fa fa-angle-right\"></i>"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "BlogIM"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://indigothemes.com/products/blogim-wordpress-theme/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"BlogIM is clean and fully customizable premium quality WordPress blogging "
+"theme with responsive layout, social media links support, logo upload "
+"options, modern looking home page etc. BlogIM Theme is fully loaded with "
+"premium quality features. BlogIM is a perfect theme for professional "
+"bloggers, internet marketers, affiliate marketers, news agencies, review "
+"agencies etc."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "IndigoThemes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://indigothemes.com"
+msgstr ""

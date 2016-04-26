@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+/* CSS Document */
+#customize-control-header_textcolor,
+#accordion-section-header_image{
+        display: none !important;
+}

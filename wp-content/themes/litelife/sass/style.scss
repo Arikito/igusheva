@@ -39,9 +39,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	}
 }
 .animate {
-	-webkit-transition: all .4s cubic-bezier(.4,0,.2,1);
-	-o-transition: all .4s cubic-bezier(.4,0,.2,1);
-	transition: all .4s cubic-bezier(.4,0,.2,1);
+	-webkit-transition: all .3s cubic-bezier(.4,0,.2,1);
+	-o-transition: all .3s cubic-bezier(.4,0,.2,1);
+	transition: all .3s cubic-bezier(.4,0,.2,1);
 }
 
 .hidden {
@@ -205,8 +205,14 @@ blockquote {
 			font-weight: bold;
 			a {
 				color: $gray5;
+				font-weight: normal;
+				&:hover {
+					color: $gray4;
+				}
 			}
 			.articleSocial {
+				display: flex;
+    			align-items: center;
 				a {
 					font-size: 16px;
 					width: $gap;
@@ -286,8 +292,7 @@ aside {
 					border-radius: 50%;
 				}
 			}
-			.description {
-				color: $white;
+			.description {				
 				color: $white;
 				font-family: $f_serif;
 				font-size: 0.857em;
@@ -469,15 +474,20 @@ html.animations {
 }
 
 // Calendar styles
-#wp-calendar {
-	margin-left: calc(50% - 70px);
+#wp-calendar {	
+	width: 100%;	
 	caption {
-		color: #f00;
+		margin-bottom: 15px !important;
 		font-weight: bold;
 		margin-bottom: 3px;
 	}
 	thead {
-		line-height: 20px;  
+		line-height: 20px; 
+		color: $white;
+		background: $gray2;
+		th {
+			border: 1px solid $white;
+		}
 	}
 	tbody {
 		td {
@@ -485,8 +495,7 @@ html.animations {
 			width: 20px;
 			height: 20px;
 			line-height: 20px;
-			text-align: center; 
-			border-radius: 50%;  
+			text-align: center; 			
 			&:not(.pad):hover {
 				background: $accent;
 				color: $white;
@@ -496,18 +505,24 @@ html.animations {
 				}
 			}			
 			&:not(.pad) a {
-				color: $accent;
+				color: $pre_accent;
 				font-weight: bolder;				
 			}
 		}
 	}
 	tfoot {
-		#next {
-			text-align: right;
-		}
-		a {
-			color: #f00; 
-			font-weight: bolder;				
+		#next, #prev {
+			text-align: center;
+			height: $gap;
+			line-height: $gap;				
+			a {			
+				font-weight: bolder;
+				display: block;
+				&:hover {
+						background: $accent;
+						color: $white;	
+				}			
+			}
 		}
 	}
 }
@@ -515,10 +530,11 @@ html.animations {
 // Comments & article tags style
 .block .tags {
 	clear: both;
-	color: $accent;
-	 a {
+	text-transform: none;
+	width: 50%;
+	a {
 		color: $gray3;
-	 }
+	}
 }
 
 #comments {
@@ -528,9 +544,6 @@ html.animations {
 		color: $gray5;
 	}
 	.comment-list {
-		a {
-			color: $accent;
-		}		
 		.comment-author{
 			display: flex;
 			img {
@@ -583,10 +596,7 @@ html.animations {
 
 // New comment form
 
-.newCommentForm {
-	a {
-		color: $accent;
-	}
+.newCommentForm {	
 	p {
 		margin-top: 5px;
 		label {
@@ -599,11 +609,14 @@ html.animations {
 			outline-color: $accent;
 		}
 		#submit {
-			background: $accent;
+			background: $pre_accent;
 			border: none;
-			color: #fff;
+			color: $white;
 			height: $gap;
 			margin-top: $gap/3;
+			&:hover {
+				background: $accent;
+			}
 		}
 		textarea {
 			outline-color: $accent;
@@ -613,6 +626,22 @@ html.animations {
 	.comment-respond {
 		h2 {
 			text-align: center;
+		}
+	}
+}
+
+// Tags widget style
+
+.tagcloud {
+	line-height: 20px;
+	text-align: justify;
+	a {
+		font-size: 14px !important;
+		color: $gray4;
+		padding-right: 5px;
+		&:hover {
+			color: $gray2;
+			font-weight: bold;
 		}
 	}
 }

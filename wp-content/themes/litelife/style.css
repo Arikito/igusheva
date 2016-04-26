@@ -86,9 +86,9 @@ table {
     background: #f00; }
 
 .animate, .main-content, .main-content .pagination .page-numbers, aside .block .follow_me a, header .header_right ul.menu > li, header .header_right ul.menu > li:before, #wp-calendar tbody td {
-  -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  -o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 
 .hidden {
   display: none !important; }
@@ -218,12 +218,18 @@ blockquote {
       text-transform: uppercase;
       font-weight: bold; }
       .main-content article .articleFooter a {
-        color: #ccc; }
-      .main-content article .articleFooter .articleSocial a {
-        font-size: 16px;
-        width: 30px;
-        text-align: center;
-        display: inline-block; }
+        color: #ccc;
+        font-weight: normal; }
+        .main-content article .articleFooter a:hover {
+          color: #888; }
+      .main-content article .articleFooter .articleSocial {
+        display: flex;
+        align-items: center; }
+        .main-content article .articleFooter .articleSocial a {
+          font-size: 16px;
+          width: 30px;
+          text-align: center;
+          display: inline-block; }
   .main-content .pagination {
     display: flex;
     justify-content: center; }
@@ -274,7 +280,6 @@ aside {
         height: 100%;
         border-radius: 50%; }
     aside .block .about_profile .description, aside .block .about_profile .name {
-      color: #fff;
       color: #fff;
       font-family: "Cambria", "serif";
       font-size: 0.857em;
@@ -396,19 +401,22 @@ html.animations header {
   position: relative; }
 
 #wp-calendar {
-  margin-left: calc(50% - 70px); }
+  width: 100%; }
   #wp-calendar caption {
-    color: #f00;
+    margin-bottom: 15px !important;
     font-weight: bold;
     margin-bottom: 3px; }
   #wp-calendar thead {
-    line-height: 20px; }
+    line-height: 20px;
+    color: #fff;
+    background: #444; }
+    #wp-calendar thead th {
+      border: 1px solid #fff; }
   #wp-calendar tbody td {
     width: 20px;
     height: 20px;
     line-height: 20px;
-    text-align: center;
-    border-radius: 50%; }
+    text-align: center; }
     #wp-calendar tbody td:not(.pad):hover {
       background: #f00;
       color: #fff;
@@ -416,17 +424,23 @@ html.animations header {
       #wp-calendar tbody td:not(.pad):hover a {
         color: #fff; }
     #wp-calendar tbody td:not(.pad) a {
-      color: #f00;
+      color: rgba(255, 0, 0, 0.7);
       font-weight: bolder; }
-  #wp-calendar tfoot #next {
-    text-align: right; }
-  #wp-calendar tfoot a {
-    color: #f00;
-    font-weight: bolder; }
+  #wp-calendar tfoot #next, #wp-calendar tfoot #prev {
+    text-align: center;
+    height: 30px;
+    line-height: 30px; }
+    #wp-calendar tfoot #next a, #wp-calendar tfoot #prev a {
+      font-weight: bolder;
+      display: block; }
+      #wp-calendar tfoot #next a:hover, #wp-calendar tfoot #prev a:hover {
+        background: #f00;
+        color: #fff; }
 
 .block .tags {
   clear: both;
-  color: #f00; }
+  text-transform: none;
+  width: 50%; }
   .block .tags a {
     color: #666; }
 
@@ -434,8 +448,6 @@ html.animations header {
   margin-bottom: 15px;
   text-transform: uppercase;
   color: #ccc; }
-#comments .comment-list a {
-  color: #f00; }
 #comments .comment-list .comment-author {
   display: flex; }
   #comments .comment-list .comment-author img {
@@ -472,8 +484,6 @@ html.animations header {
   border-top: 1px dashed #ccc;
   padding-top: 15px; }
 
-.newCommentForm a {
-  color: #f00; }
 .newCommentForm p {
   margin-top: 5px; }
   .newCommentForm p label {
@@ -484,15 +494,28 @@ html.animations header {
   .newCommentForm p input {
     outline-color: #f00; }
   .newCommentForm p #submit {
-    background: #f00;
+    background: rgba(255, 0, 0, 0.7);
     border: none;
     color: #fff;
     height: 30px;
     margin-top: 10px; }
+    .newCommentForm p #submit:hover {
+      background: #f00; }
   .newCommentForm p textarea {
     outline-color: #f00;
     width: 100%; }
 .newCommentForm .comment-respond h2 {
   text-align: center; }
+
+.tagcloud {
+  line-height: 20px;
+  text-align: justify; }
+  .tagcloud a {
+    font-size: 14px !important;
+    color: #888;
+    padding-right: 5px; }
+    .tagcloud a:hover {
+      color: #444;
+      font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,42 @@
+Version 1.0
+- Initial Submission
+
+Version 1.0.1
+- Fixed Screenshot.png
+- Small change in style.css and readme.txt
+
+Version 1.0.2
+- Screenshot Change.
+
+Version 1.0.3
+- Cleaned Functions.php, header.php and layout.php files.
+
+Version 1.0.4
+- A few small fixes.
+
+Version 1.0.5
+- Cleaning Junk Code.
+
+Version 1.0.6
+- Fixed Translation and escaping issues.
+- Fixed Avoid hard coding to modify content.
+- Fixed not properly prefixed functions.
+
+Version 1.1.0
+- Fixed Data Validation and escaping issues.
+
+Version 1.1.1
+- Fixed Data Validation and escaping issues.
+
+Version 1.2
+-Code Cleaning and Optimisation.
+
+Version 1.2.1
+-Theme Optimisation.
+
+Version 1.2.2
+-Updated Pot File.
+
+Version 1.2.3
+-Theme Optimisation.
+

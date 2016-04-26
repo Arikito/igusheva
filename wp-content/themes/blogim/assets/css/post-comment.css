@@ -1,0 +1,334 @@
+/* Text elements */
+.format-text.the-content,
+.format-text address,
+.format-text p {
+	margin-bottom: 15px;
+	line-height	: 180%;
+}
+.the-content.format-text p{
+	margin-bottom: 30px;
+}
+.format-text ul,
+.format-text ol { 
+	line-height	: 200%;
+}
+.format-text  ul {
+	list-style: square inside;
+	margin: 0 0 30px 10px;
+	padding: 0 0 20px 30px;
+}
+
+.format-text ul ul { list-style:circle; }
+
+.format-text ol {
+	list-style: decimal inside;
+	margin: 0 0 30px 10px;
+	padding: 0 0 20px 30px;
+}
+.format-text ol ol {
+	list-style: upper-alpha;
+}
+.format-text ol ol ol {
+	list-style: lower-roman;
+}
+.format-text ol ol ol ol {
+	list-style: lower-alpha;
+}
+.format-text ul ul,
+.format-text ol ol,
+.format-text ul ol,
+.format-text ol ul {
+	margin-bottom: 0;
+}
+.format-text dl {
+	margin: 0 0 24px 0;
+}
+.format-text dt {
+	font-weight: 700;
+}
+.format-text dd {
+	margin-bottom: 18px;
+	line-height	: 180%;
+}
+.format-text strong {
+	font-weight: bold;
+}
+.format-text cite,
+.format-text em,
+.format-text i {
+	font-style: italic;
+}
+.format-text big {
+	font-size: 131.25%;
+}
+.format-text ins {
+	background: #ffc;
+	text-decoration: none;
+}
+.format-text blockquote {
+	margin: 20px 30px 30px;
+	font-family: 'Playfair Display';
+	padding: 15px 30px;
+	font-size: 20px;
+	line-height: 30px;
+	border-left: 5px solid #dddddd;
+}
+.format-text blockquote cite,
+.format-text blockquote em,
+.format-text blockquote i {
+	font-style: italic;
+}
+.format-text pre {
+	background: #888;
+	color: #eee;
+	line-height: 23px;
+	margin-bottom: 30px;
+	padding: 20px 30px;
+	display: block;
+	text-align: left;
+	font-family: 'Lato';
+	font-weight: 400;
+	font-size: 16px;
+	-moz-border-radius: 0 ;
+	-webkit-border-radius:0 ;
+	border-radius: 0;
+}
+.format-text abbr,
+.format-text acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+.format-text sup,
+.format-text sub {
+	height: 0;
+	line-height: 1;
+	position: relative;
+	vertical-align: baseline;
+}
+.format-text sup {
+	bottom: 1ex;
+}
+.format-text sub {
+	top: .5ex;
+}
+.format-text input[type="text"],
+.format-text textarea {
+	background: #f9f9f9;
+	border: 1px solid #ccc;
+	max-width: 100%;
+	font-family: 'Lato';
+	font-weight: 400;
+	font-size: 12px;
+	color: #3b3b3b;
+	padding: 2px 5px;
+}
+.format-text textarea{
+	padding: 5px;
+}
+.format-text a:hover {
+	text-decoration: underline;
+}
+/* Content */
+.format-text input,
+.format-text textarea {
+	color: #3b3b3b;
+	font-size: 14px;
+	line-height: 20px;
+}
+.format-text p,
+.format-text ul,
+.format-text ol,
+.format-text dd,
+.format-text pre,
+.format-text hr {
+	margin-bottom: 10px;
+}
+.format-text ul ul,
+.format-text ol ol,
+.format-text ul ol,
+.format-text ol ul {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.format-text pre,
+.format-text kbd,
+.format-text tt,
+.format-text var {
+	font-size: 15px;
+	line-height: 21px;
+}
+.format-text code {
+	font-size: 13px;
+}
+.format-text dt,
+.format-text th {
+	color: #3b3b3b;
+}
+
+.format-text h1 { font-size : 30px; }
+.format-text h2 { font-size : 26px; }
+.format-text h3 { font-size : 24px; }
+.format-text h4 { font-size : 22px; }
+.format-text h5 { font-size : 20px; }
+.format-text h6 { font-size : 18px; }
+
+.format-text h1,
+.format-text h2,
+.format-text h3,
+.format-text h4,
+.format-text h5,
+.format-text h6 {
+	color: #3b3b3b;
+	line-height: 1.5em;
+	font-family: 'Lato';
+	margin: 0 0 15px 0;
+	font-weight: 700;
+}
+.format-text table {
+	border: 1px solid #e7e7e7;
+	margin: 0 -1px 24px 0;
+	text-align: left;
+	width: 100%;
+}
+.format-text tr th,
+.format-text thead th {
+	color: #3b3b3b;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 18px;
+	padding: 10px 24px;
+	font-family: 'Lato';
+}
+.format-text tr td {
+	border-top: 1px solid #e7e7e7;
+	padding: 10px 24px;
+}
+.format-text tr.odd td {
+	background: #f2f7fc;
+}
+.format-text .entry-summary p:last-child {
+	margin-bottom: 12px;
+}
+.format-text fieldset {
+	border: 1px solid #e7e7e7;
+	margin: 0 0 24px 0;
+	padding: 24px;
+}
+.format-text fieldset legend {
+	background: #fff;
+	color: #000;
+	font-weight: bold;
+	padding: 0 24px;
+}
+.format-text input {
+	margin: 0 0 24px 0;
+}
+.format-text input.file,
+.format-text input.button {
+	margin-right: 24px;
+}
+.format-text label {
+	color: #888;
+	font-size: 12px;
+}
+.format-text select {
+	margin: 0 0 24px 0;
+}
+
+/* Images */
+
+/*
+- Resize images to fit the main content area.
+- Applies only to images uploaded via WordPress by targeting size-* classes.
+- Other images will be left alone. Use "size-auto" class to apply to other images.
+*/
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img {
+	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect ratio. */
+}
+.alignleft,
+img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 20px;
+	margin-top: 12px;
+}
+.alignright,
+img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 20px;
+	margin-top: 12px;
+}
+.aligncenter,
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	margin-bottom: 12px;
+}
+.wp-caption {
+	background: #f1f1f1;
+	line-height: 18px;
+	margin-bottom: 20px;
+	max-width: 632px !important; /* prevent too-wide images from breaking layout */
+	text-align:center;
+}
+.wp-caption img {
+	margin-top: 5px;
+}
+.wp-caption p.wp-caption-text {
+	color: #222;
+	font-size: 12px;
+	margin: 5px;
+	padding	: 0 5px;
+	text-align:left;
+}
+.wp-smiley {
+	margin: 0;
+}
+/* Comments form */
+#respond {
+	font-size	: 13px;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+#respond p {
+	margin: 0;
+}
+#respond .comment-notes {
+	margin-bottom: 1em;
+	line-height: 180%;
+}
+.form-allowed-tags {
+	line-height: 1em;
+}
+h3#reply-title {
+	margin: 18px 0;
+}
+#comments-list #respond {
+	margin: 0 0 18px 0;
+}
+#comments-list ul #respond {
+	margin: 0;
+}
+#respond .required {
+	color: #ff4b33;
+	font-weight: bold;
+}
+#respond label {
+	display		: block;
+}
+#respond .form-allowed-tags {
+	display: none;
+}
