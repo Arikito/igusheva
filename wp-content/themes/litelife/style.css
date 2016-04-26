@@ -85,7 +85,7 @@ table {
     bottom: calc(100% - 3px);
     background: #f00; }
 
-.animate, .main-content, .main-content .pagination .page-numbers, aside .block .follow_me a, header .header_right ul.menu > li, header .header_right ul.menu > li:before, #wp-calendar tbody td {
+.animate, .main-content, .main-content .pagination .page-numbers, aside .block .follow_me a, header .header_right ul.menu > li, header .header_right ul.menu > li:before, #wp-calendar tbody td, #wp-calendar tfoot #next, #wp-calendar tfoot #prev {
   -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   -o-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -323,8 +323,7 @@ footer {
   display: block;
   float: left;
   clear: both;
-  background: #fff;
-  height: 30px;
+  height: 45px;
   text-align: center;
   color: #666; }
 
@@ -405,7 +404,8 @@ html.animations header {
   #wp-calendar caption {
     margin-bottom: 15px !important;
     font-weight: bold;
-    margin-bottom: 3px; }
+    margin-bottom: 3px;
+    color: #f00; }
   #wp-calendar thead {
     line-height: 20px;
     color: #fff;
@@ -512,10 +512,42 @@ html.animations header {
   text-align: justify; }
   .tagcloud a {
     font-size: 14px !important;
-    color: #888;
+    color: #666;
     padding-right: 5px; }
     .tagcloud a:hover {
-      color: #444;
-      font-weight: bold; }
+      color: #f00; }
+
+.widget_archive ul li, .widget_categories ul li, .widget_meta ul li {
+  margin-bottom: 5px; }
+  .widget_archive ul li a, .widget_categories ul li a, .widget_meta ul li a {
+    color: #666;
+    text-transform: uppercase; }
+    .widget_archive ul li a:hover, .widget_categories ul li a:hover, .widget_meta ul li a:hover {
+      color: #f00; }
+
+.widget_recent_entries ul li {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  border-bottom: 1px dashed #ccc; }
+  .widget_recent_entries ul li:last-child {
+    border: none; }
+  .widget_recent_entries ul li span {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #666; }
+
+.widget_recent_comments ul {
+  color: #444; }
+  .widget_recent_comments ul li {
+    height: 30px;
+    line-height: 25px;
+    border-bottom: 1px dashed #ccc; }
+    .widget_recent_comments ul li:last-child {
+      border: none; }
+    .widget_recent_comments ul li span {
+      font-weight: bold;
+      margin-bottom: 5px; }
 
 /*# sourceMappingURL=style.css.map */
