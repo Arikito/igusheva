@@ -71,5 +71,4 @@ $RECYCLE.BIN/
 .sass-cache/*
 node_modules/*
 .sublime-grunt.cache
-.sublime-grunt.cache
 wp-content/themes/mytheme/style.css.map
