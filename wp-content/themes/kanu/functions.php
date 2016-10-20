@@ -1,318 +1,152 @@
 <?php
 /**
- * kanu functions and definitions
+ * Boson functions and definitions
  *
- * @package kanu
+ * Set up the theme and provides some helper functions, which are used in the
+ * theme as custom template tags. Others are attached to action and filter
+ * hooks in WordPress to change core functionality.
+ *
+ * When using a child theme you can override certain functions (those wrapped
+ * in a function_exists() call) by defining them first in your child theme's
+ * functions.php file. The child theme's functions.php file is included before
+ * the parent theme's file, so the child theme functions would be used.
+ *
+ * @link https://codex.wordpress.org/Theme_Development
+ * @link https://codex.wordpress.org/Child_Themes
+ *
+ * Functions that are not pluggable (not wrapped in function_exists()) are
+ * instead attached to a filter or action hook.
+ *
+ * For more information on hooks, actions, and filters,
+ * {@link https://codex.wordpress.org/Plugin_API}
+ *
+ * @package WordPress
+ * @subpackage Boson
+ * @since Boson 1.0
  */
 
 /**
  * Set the content width based on the theme's design and stylesheet.
+ *
+ * @since Boson 1.0
  */
-if ( ! isset( $content_width ) )
-	$content_width = 726; /* pixels */
+if ( ! isset( $content_width ) ) {
+	$content_width = 660;
+}
 
 
 
-if ( ! function_exists( 'kanu_setup' ) ) :
+
+if ( ! function_exists( 'boson_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ *
+ * @since Boson 1.0
  */
-function kanu_setup() {
-
-	/**
-	 * Make theme available for translation
-	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on kanu, use a find and replace
-	 * to change 'kanu' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'kanu', get_template_directory() . '/languages' );
-
-	/**
-	 * Add default posts and comments RSS feed links to head
-	 */
-	add_theme_support( 'automatic-feed-links' );
-
-	/**
-	 * Enable support for Post Thumbnails on posts and pages
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	add_theme_support( 'post-thumbnails' );
-    
-    /**
-	 * Title
-	 */
-    add_theme_support( "title-tag" );
-
-	/**
-	 * This theme uses wp_nav_menu() in one location.
-	 */
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'kanu' )
-	) );
-
-	/**
-	 * Custom Header
-	 */
-    $kanu_defaults = array(
-    	'default-image'          => '',
-    	'random-default'         => false,
-    	'width'                  => 0,
-    	'height'                 => 0,
-    	'flex-height'            => false,
-    	'flex-width'             => false,
-    	'default-text-color'     => '',
-    	'header-text'            => true,
-    	'uploads'                => true,
-    	'wp-head-callback'       => '',
-    	'admin-head-callback'    => '',
-    	'admin-preview-callback' => '',
-    );
-    add_theme_support( 'custom-header', $kanu_defaults );
-
-	/**
-	 * Setup the WordPress core custom background feature.
-	 */
-	add_theme_support( 'custom-background', apply_filters( 'kanu_custom_background_args', array(
-		'default-color' => 'f7f7f7',
-		'default-image' => '',
-	) ) );
-	
-	add_editor_style( 'custom-editor-style.css' );
+function boson_setup() {
+ /*
+  * Make theme available for translation.
+  * Translations can be filed in the /languages/ directory.
+  * If you're building a theme based on Boson, use a find and replace
+  * to change 'Boson' to the name of your theme in all the template files
+  */
+  load_theme_textdomain( 'boson', get_template_directory().'/languages' );
+  load_child_theme_textdomain( 'boson', get_stylesheet_directory().'/languages');
+     
+  // Add default posts and comments RSS feed links to head.
+  add_theme_support( 'automatic-feed-links' );
+  
+ /*
+  * Let WordPress manage the document title.
+  * By adding theme support, we declare that this theme does not use a
+  * hard-coded <title> tag in the document head, and expect WordPress to
+  * provide it for us.
+  */
+  add_theme_support( 'title-tag' );
+  
+ /*
+  * Enable support for Post Thumbnails on posts and pages.
+  *
+  * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+  */
+  add_theme_support( 'post-thumbnails' );
+  
+  // This theme uses wp_nav_menu() in two locations.
+  register_nav_menus( array(
+ 	'primary' => esc_html__( 'Primary Menu', 'boson' ),
+  ) );
+  
+ /*
+  * Switch default core markup for search form, comment form, and comments
+  * to output valid HTML5.
+  */
+  add_theme_support( 'html5', array(
+	'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+  ) );
+  
+ /*
+  * Enable support for Post Formats.
+  *
+  * See: https://codex.wordpress.org/Post_Formats
+  */
+  add_theme_support( 'post-formats', array(
+	 'image', 'gallery'
+  ) );
+  
+ /*
+  * This theme styles the visual editor to resemble the theme style,
+  * specifically font, colors, icons, and column width.
+  */
+  add_editor_style( array( 'style.css', 'style_rtl.css' ) );
+  
+  add_theme_support( "custom-header", array() );
+  add_theme_support( 'custom-background', array() );
+  
 }
-endif; // kanu_setup
-add_action( 'after_setup_theme', 'kanu_setup' );
+endif; // boson_setup
+add_action( 'after_setup_theme', 'boson_setup' );
 
 /**
- * Register widgetized area and update sidebar with default widgets
+ * Register widget area.
+ *
+ * @since Boson 1.0
+ *
+ * @link https://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function kanu_widgets_init() {
+function boson_widgets_init() {
+    //Primary Sidebar
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'kanu' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'name'          => esc_html__( 'Default Sidebar Widget Area', 'boson' ),
+		'id'            => 'primary',
+		'description'   => esc_html__( 'Appears in sidebar area.', 'boson' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+	) );
+
+
+    //Footer Four Sidebar
+    register_sidebar( array(
+		'name'          => esc_html__( 'Footer Sidebar Widget Area', 'boson' ),
+		'id'            => 'footer',
+		'description'   => esc_html__( 'Appears in footer sidebar area.', 'boson' ),
+		'before_widget' => '<div id="%1$s" class="footer-widget widget %2$s row-item col-1_4">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>'
 	) );
 }
-add_action( 'widgets_init', 'kanu_widgets_init' );
+add_action( 'widgets_init', 'boson_widgets_init' );
 
-/**
- * Enqueue google fonts
- */
-function kanu_fonts_url() {
-    $kanu_fonts_url = '';
- 
-    /* Translators: If there are characters in your language that are not
-    * supported by Roboto, translate this to 'off'. Do not translate
-    * into your own language.
-    */
-    $kanu_roboto = _x( 'on', 'Roboto font: on or off', 'kanu' );
- 
-    /* Translators: If there are characters in your language that are not
-    * supported by Lato, translate this to 'off'. Do not translate
-    * into your own language.
-    */
-    $kanu_lato = _x( 'on', 'Lato font: on or off', 'kanu' );
-    
-   if ( 'off' !== $kanu_roboto || 'off' !== $kanu_lato ) {
-        $kanu_font_families = array();
- 
-        if ( 'off' !== $kanu_roboto ) {
-            $kanu_font_families[] = 'Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic';
-        }
- 
-        if ( 'off' !== $kanu_lato ) {
-            $kanu_font_families[] = 'Lato:400,700';
-        }
- 
-        $kanu_query_args = array(
-            'family' => urlencode( implode( '|', $kanu_font_families ) ),
-        );
- 
-        $kanu_fonts_url = add_query_arg( $kanu_query_args, 'https://fonts.googleapis.com/css' );
-    }
- 
-    return esc_url_raw( $kanu_fonts_url );
-}
-function kanu_scripts_styles() {
-    wp_enqueue_style( 'kanu-fonts', kanu_fonts_url(), array(), null );
-}
-add_action( 'wp_enqueue_scripts', 'kanu_scripts_styles' );
-
-/**
- * Enqueue scripts and styles
- */
-function kanu_scripts() {
-    /**
-     * Enqueue Css Files.
-     */ 
-    wp_enqueue_style( 'kanu-slider-bxslider', get_template_directory_uri()."/css/jquery.bxslider.css" );
-    wp_enqueue_style( 'kanu-style', get_template_directory_uri()."/css/style.css" );
-	wp_enqueue_style( 'kanu-fontello', get_template_directory_uri()."/3dParty/fontello/css/fontello.css" );
-	
-    /**
-     * Register Scripts
-     */
-	wp_enqueue_script('jquery');
-    
-    // threaded comments
-    if ( is_single() && comments_open() && get_option( 'thread_comments' ) ){
-        wp_enqueue_script( 'comment-reply' );
-    }
-    
-    // Plugins
-    wp_register_script( 'kanu-navigation', get_template_directory_uri() . '/js/navigation.js', false, false, true );    
-    wp_register_script( 'kanu-slider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', false, false, true ); 
-    
-    //files dependances.
-    $kanu_deps = array(
-        'kanu-navigation',
-        'kanu-slider',
-    );   
-    wp_register_script( 'kanu-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', $kanu_deps, false, true );    
-    
-    /**
-     * Enqueue All
-     */
-    wp_enqueue_script( 'kanu-skip-link-focus-fix' );
-    
-    if ( ( (is_home() == true) || (is_front_page() == true) ) ) {
-		wp_enqueue_script( 'kanu-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery','kanu-slider') );
-	}
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'kanu-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'kanu_scripts' );
 
 /**
  * Custom template tags for this theme.
+ *
+ * @since Boson 1.0
  */
-require get_template_directory() . '/inc/template-tags.php';
-
-
-class kanu_Recent_Posts extends WP_Widget {
-
-	public function __construct() {
-		parent::__construct(
-			'kanu_rp', // Base ID
-			__('kanu Recent Posts', 'kanu'), // Name
-			array( 'description' => __( 'Display your recent posts, with a Thumbnail.', 'kanu' ), ) // Args
-		);
-	}
-
-	public function widget( $args, $instance ) {
-		$title = apply_filters( 'widget_title', $instance['title'] );
-		$no_of_posts = apply_filters( 'no_of_posts', $instance['no_of_posts'] );
-
-		echo $args['before_widget'];
-		
-		if ( ! empty( $title ) )
-			echo $args['before_title'] . $title . $args['after_title'];
-		
-		// WP_Query arguments
-		$qa = array (
-			'post_type'              => 'post',
-			'posts_per_page'		 => 5,
-			'offset'				 => 0,
-			'ignore_sticky_posts'    => 1
-
-		);
-		
-		// The Query
-		$recent_articles = new WP_Query( $qa );
-		if($recent_articles->have_posts()) : ?>
-		<ul class="rp">
-		<?php
-			while($recent_articles->have_posts()) : 
-			$recent_articles->the_post();
-         ?>
-         		 
-		         <li class='rp-item'>
-		         <?php if( has_post_thumbnail() ) : ?>
-		         <div class='rp-thumb'><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a></div>
-		         <?php 
-		         else :
-		         ?>
-		         <div class='rp-thumb'><a href="<?php the_permalink(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/nthumb.png"></a></div>
-		         <?php
-		         endif; ?>	
-		         <div class='rp-title'><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
-		         </li>      
-		      
-		<?php
-		      endwhile;
-		   else: 
-                echo esc_html__( 'Oops, there are no posts.', 'kanu' );
-		   endif;
-		?>
-		</ul>
-		<?php
-		
-		echo $args['after_widget'];
-	}
-
- 	public function form( $instance ) {
-		if ( isset( $instance[ 'title' ] ) ) {
-			$title = $instance[ 'title' ];
-		}
-		else {
-			$title = __( 'Latest Articles', 'kanu' );
-		}
-		if ( isset( $instance[ 'no_of_posts' ] ) ) {
-			$no_of_posts = $instance[ 'no_of_posts' ];
-		}
-		else {
-			$no_of_posts = __( '5', 'kanu' );
-		}
-		?>
-		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:','kanu' ); ?></label> 
-		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-		
-		<label for="<?php echo $this->get_field_id( 'no_of_posts' ); ?>"><?php _e( 'No. of Posts:','kanu' ); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'no_of_posts' ); ?>" name="<?php echo $this->get_field_name( 'no_of_posts' ); ?>" type="text" value="<?php echo esc_attr( $no_of_posts ); ?>" />
-		</p>
-		<?php 
-	}
-	
-	public function update( $new_instance, $old_instance ) {
-		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['no_of_posts'] = ( ! empty( $new_instance['no_of_posts'] ) ) ? strip_tags( $new_instance['no_of_posts'] ) : '5';
-		if ( is_numeric($new_instance['no_of_posts']) == false ) {
-			$instance['no_of_posts'] = $old_instance['no_of_posts'];
-			}
-		return $instance;
-		
-		
-	}
-}
-add_action( 'widgets_init', 'kanu_register_kanu_widget' );  
-function kanu_register_kanu_widget() {  
-    register_widget( 'kanu_Recent_Posts' );  
-}  
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory()  . '/inc/kanu-customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
+require_once( get_template_directory() . '/inc/theme-init.php' );

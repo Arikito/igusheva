@@ -2,8 +2,8 @@
 Theme URI: http://www.mhthemes.com/themes/mh/newsdesk-lite/
 Tags: Magazine, News, Blog, Responsive
 Requires at least: 4.1.0
-Tested up to: 4.4.2
-Stable tag: 1.3.0
+Tested up to: 4.6.0
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 MH Newsdesk lite WordPress Theme, Copyright 2015 MH Themes
@@ -56,6 +56,25 @@ Overview: http://demo.mhthemes.com/newsdesk/credits/
 ==================================
 Changelog
 ==================================
+
+= v1.3.4 05-10-2016 =
+* Minor CSS adjustments
+* Moved theme links to theme options panel 
+* Removed redundant file mh-customizer.js
+* Removed redundant conditional tag in mh_newsdesk_lite_scripts()
+* Added dismissible admin notice to refer users to welcome page
+* Updated theme info page
+* Updated german translation
+* Updated translation files
+
+= v1.3.3 16-08-2016 =
+* Improved header.php to load pingback URL only on posts
+
+= v1.3.2 19-07-2016 =
+* Updated WordPress.org theme tags
+
+= v1.3.1 06-07-2016 =
+* Updated WordPress.org theme tags
 
 = v1.3.0 06-04-2016 =
 * Added selective refresh support for widgets (introduced in WP 4.5)

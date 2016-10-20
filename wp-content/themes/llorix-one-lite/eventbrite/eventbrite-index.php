@@ -1,6 +1,8 @@
 <?php
 /**
  * Template Name: Eventbrite Events
+ *
+ * @package llorix-one-lite
  */
 
 get_header(); ?>
@@ -10,7 +12,7 @@ get_header(); ?>
 </header>
 <!-- /END HOME / HEADER  -->
 
-<div role="main" id="content" class="content-warp">
+<div role="main" id="content" class="content-wrap">
 	<div class="container">
 
 		<div id="primary" class="content-area col-md-8">
@@ -50,7 +52,7 @@ get_header(); ?>
 								</div><!-- .entry-content -->
 
 								<footer class="entry-footer">
-									<?php eventbrite_edit_post_link( __( 'Edit', 'eventbrite_api' ), '<span class="edit-link">', '</span>' ); ?>
+									<?php eventbrite_edit_post_link( __( 'Edit', 'llorix-one-lite' ), '<span class="edit-link">', '</span>' ); ?>
 								</footer><!-- .entry-footer -->
 							</article><!-- #post-## -->
 
@@ -63,7 +65,7 @@ get_header(); ?>
 
 					<?php get_template_part( 'content', 'none' ); ?>
 
-				<?php endif; 
+				<?php endif;
 				// Return $post to its rightful owner.
 				wp_reset_postdata();
 				?>

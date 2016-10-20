@@ -5,7 +5,7 @@
  * @package llorix-one-lite
  */
 
-	get_header(); 
+	get_header();
 ?>
 
 	</div>
@@ -13,7 +13,7 @@
 </header>
 <!-- /END HOME / HEADER  -->
 
-<div itemscope itemtype="http://schema.org/SearchResultsPage" role="main" id="content" class="content-warp">
+<div itemscope itemtype="http://schema.org/SearchResultsPage" role="main" id="content" class="content-wrap">
 	<div class="container">
 
 		<div id="primary" class="content-area col-md-8 post-list">

@@ -29,7 +29,16 @@ get_header(); ?>
 	<div class="container">
 		<div class="dt-main-cont">
 			<div class="row">
-				<div class="col-lg-8 col-md-8">
+
+				<?php if ( get_theme_mod( 'passionate_page_layout', 0 ) == 'left_sidebar' ) : ?>
+
+					<div class="col-lg-4 col-md-4">
+						<?php get_sidebar(); ?>
+					</div><!-- .col-lg-4 .col-md-4 -->
+
+				<?php endif; ?>
+
+				<div class="<?php if ( get_theme_mod( 'passionate_page_layout', 0 ) == 'left_sidebar' || get_theme_mod( 'passionate_page_layout', 0 ) == 'right_sidebar' ) : ?>col-lg-8 col-md-8<?php else: ?>col-lg-12 col-md-12<?php endif; ?>">
 					<div id="primary" class="content-area">
 						<main id="main" class="site-main" role="main">
 
@@ -37,67 +46,88 @@ get_header(); ?>
 
 								<div class="dt-archive-posts">
 									<?php
-									while ( have_posts() ) : the_post(); ?>
+									while ( have_posts() ) : the_post();
 
-										<div class="dt-archive-post">
-											<header class="entry-header">
-												<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+										if ( 'page' == get_option( 'show_on_front' ) ) : ?>
 
-												<?php if ( 'post' === get_post_type() ) : ?>
-													<div class="entry-meta">
-														<?php passionate_posted_on(); ?>
-													</div><!-- .entry-meta -->
-												<?php endif; ?>
-											</header><!-- .entry-header -->
-
-											<figure class="dt-archive-img">
-
+											<div class="dt-content-area">
 												<?php
-												if ( has_post_thumbnail() ) :
 
-													$dt_work_page_thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'passionate-archive-img' );
-													$dt_work_page_thumbnail_url = $dt_work_page_thumbnail_src[0];
+												get_template_part( 'template-parts/content', 'front-page' );
 
-													?>
-													<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( $dt_work_page_thumbnail_url ); ?>" alt="<?php echo get_the_title(); ?>"></a>
-
-												<?php
+												// If comments are open or we have at least one comment, load up the comment template.
+												if ( comments_open() || get_comments_number() ) :
+													comments_template();
 												endif;
+
 												?>
+											</div>
+										<?php else : ?>
 
-												<div class="clearfix"></div>
-											</figure><!-- .dt-archive-img -->
+											<div class="dt-archive-post">
+												<header class="entry-header">
+													<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-											<div class="dt-archive-post-content">
-												<div class="dt-archive-post-desc">
-													<p><?php
-														$excerpt = get_the_excerpt();
-														$limit   = "260";
-														$pad     = "...";
+													<?php if ( 'post' === get_post_type() ) : ?>
+														<div class="entry-meta">
+															<?php passionate_posted_on(); ?>
+														</div><!-- .entry-meta -->
+													<?php endif; ?>
+												</header><!-- .entry-header -->
 
-														if( strlen( $excerpt ) <= $limit ) {
-															echo esc_html( $excerpt );
-														} else {
-															$excerpt = substr( $excerpt, 0, $limit ) . $pad;
-															echo esc_html( $excerpt );
-														}
-														?></p>
-												</div><!-- .dt-archive-post-desc -->
+												<figure class="dt-archive-img">
 
-												<footer class="entry-footer">
-													<?php passionate_entry_footer(); ?>
-												</footer><!-- .entry-footer -->
-											</div><!-- .dt-archive-post-content -->
+													<?php
+													if ( has_post_thumbnail() ) :
 
-											<div class="dt-archive-post-readmore">
-												<a class="transition35" href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php _e( 'Read more', 'passionate'); ?></a>
-											</div><!-- .dt-archive-post-readmore -->
+														$dt_work_page_thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'passionate-archive-img' );
+														$dt_work_page_thumbnail_url = $dt_work_page_thumbnail_src[0];
 
-										</div><!-- .dt-archive-post -->
+														?>
+														<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( $dt_work_page_thumbnail_url ); ?>" alt="<?php echo get_the_title(); ?>"></a>
 
-									<?php endwhile; ?>
+														<?php
+													endif;
+													?>
+
+													<div class="clearfix"></div>
+												</figure><!-- .dt-archive-img -->
+
+												<div class="dt-archive-post-content">
+													<div class="dt-archive-post-desc">
+														<p><?php
+															$excerpt = get_the_excerpt();
+															$limit   = "260";
+															$pad     = "...";
+
+															if( strlen( $excerpt ) <= $limit ) {
+																echo esc_html( $excerpt );
+															} else {
+																$excerpt = substr( $excerpt, 0, $limit ) . $pad;
+																echo esc_html( $excerpt );
+															}
+															?></p>
+													</div><!-- .dt-archive-post-desc -->
+
+													<footer class="entry-footer">
+														<?php passionate_entry_footer(); ?>
+													</footer><!-- .entry-footer -->
+												</div><!-- .dt-archive-post-content -->
+
+												<div class="dt-archive-post-readmore">
+													<a class="transition35" href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php _e( 'Read more', 'passionate'); ?></a>
+												</div><!-- .dt-archive-post-readmore -->
+
+											</div><!-- .dt-archive-post -->
+
+											<?php
+										endif;
+
+									endwhile;
+									?>
 
 									<?php wp_reset_postdata(); ?>
+
 								</div><!-- .dt-category-posts -->
 
 								<div class="clearfix"></div>
@@ -112,9 +142,14 @@ get_header(); ?>
 					</div><!-- #primary -->
 				</div><!-- .col-lg-8 .col-md-8 -->
 
-				<div class="col-lg-4 col-md-4">
-					<?php get_sidebar(); ?>
-				</div><!-- .col-lg-4 .col-md-4 -->
+				<?php if ( get_theme_mod( 'passionate_page_layout', 0 ) == 'right_sidebar' ) : ?>
+
+					<div class="col-lg-4 col-md-4">
+						<?php get_sidebar(); ?>
+					</div><!-- .col-lg-4 .col-md-4 -->
+
+				<?php endif; ?>
+
 			</div>
 		</div>
 	</div>

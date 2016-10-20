@@ -21,7 +21,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 // expansions
 .box-shadow {
-	box-shadow: 0 2px 5px rgba(0, 0, 0, .05);	
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .05);
 }
 .box-shadow-2 {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
@@ -187,7 +187,7 @@ blockquote {
 		}
 		.readMore {
 			clear: both;
-			text-align: center;			
+			text-align: center;
 			padding-bottom: $gap/2;
 			a {
 				text-decoration: underline;
@@ -292,7 +292,7 @@ aside {
 					border-radius: 50%;
 				}
 			}
-			.description {				
+			.description {
 				color: $white;
 				font-family: $f_serif;
 				font-size: 0.857em;
@@ -354,10 +354,11 @@ footer {
 	flex-basis: 100%;
 	display: block;
 	float: left;
-	clear: both;	
+	clear: both;
 	height:  $gap*1.5;
 	text-align: center;
 	color: $gray3;
+	margin-top: $gap;
 	@extend .box-shadow;
 }
 // !footer
@@ -418,7 +419,7 @@ header {
 			display: none;
 			position: absolute;
 			right: $gap*2.5;
-			background: $white;   
+			background: $white;
 			line-height: $gap*3;
 			.search-form {
 				display: flex;
@@ -456,7 +457,7 @@ header {
 }
 // !header
 
-// load and unload animations basics 
+// load and unload animations basics
 html.animations {
 	.main-content {
 		article {
@@ -473,8 +474,8 @@ html.animations {
 }
 
 // Calendar styles
-#wp-calendar {	
-	width: 100%;	
+#wp-calendar {
+	width: 100%;
 	caption {
 		margin-bottom: 15px !important;
 		font-weight: bold;
@@ -482,7 +483,7 @@ html.animations {
 		color: $accent;
 	}
 	thead {
-		line-height: 20px; 
+		line-height: 20px;
 		color: $white;
 		background: $gray2;
 		th {
@@ -495,7 +496,7 @@ html.animations {
 			width: 20px;
 			height: 20px;
 			line-height: 20px;
-			text-align: center; 			
+			text-align: center;
 			&:not(.pad):hover {
 				background: $accent;
 				color: $white;
@@ -503,10 +504,10 @@ html.animations {
 				a {
 					color: $white;
 				}
-			}			
+			}
 			&:not(.pad) a {
 				color: $pre_accent;
-				font-weight: bolder;				
+				font-weight: bolder;
 			}
 		}
 	}
@@ -515,14 +516,14 @@ html.animations {
 			@extend .animate;
 			text-align: center;
 			height: $gap;
-			line-height: $gap;				
-			a {			
+			line-height: $gap;
+			a {
 				font-weight: bolder;
 				display: block;
 				&:hover {
 						background: $accent;
-						color: $white;	
-				}			
+						color: $white;
+				}
 			}
 		}
 	}
@@ -555,7 +556,7 @@ html.animations {
 				display: flex;
 				flex-direction: column;
 				justify-content: flex-end;
-				margin-left: $gap/2;		
+				margin-left: $gap/2;
 				font-weight: bold;
 				color: $gray2;
 				.authorOfComment {
@@ -572,17 +573,17 @@ html.animations {
 			margin-left: $gap*2;
 			.comment-author {
 				font-size: 0.85em;
-			}					
+			}
 			img {
 				width: 30px;
 				height: 30px;
 			}
-		}		
+		}
 		p {
 			margin-top: $gap/2;
 			margin-bottom: $gap/2;
 			text-align: justify;
-			line-height: 1.5em;   			
+			line-height: 1.5em;
 		}
 		.comment {
 			margin-top: $gap/2;
@@ -597,13 +598,13 @@ html.animations {
 
 // New comment form
 
-.newCommentForm {	
+.newCommentForm {
 	p {
 		margin-top: 5px;
 		label {
 			float: left;
 			width: 100%;
-			margin-top: $gap/3;	
+			margin-top: $gap/3;
 			margin-bottom: $gap/3;
 		}
 		input {
@@ -641,7 +642,7 @@ html.animations {
 		color: $gray3;
 		padding-right: 5px;
 		&:hover {
-			color: $accent;			
+			color: $accent;
 		}
 	}
 }
@@ -656,9 +657,9 @@ html.animations {
 				color: $gray3;
 				text-transform: uppercase;
 				&:hover {
-					color: $accent;			
+					color: $accent;
 				}
-			}			
+			}
 		}
 	}
 }
@@ -688,17 +689,17 @@ html.animations {
 .widget_recent_comments {
 	ul {
 		color: $gray2;
-		li {			
-			height: $gap;
+		li {
+			// height: $gap;
 			line-height: 25px;
 			border-bottom: 1px dashed $gray5;
 			&:last-child {
 				border: none;
 			}
-			span {				
+			span {
 				font-weight: bold;
-				margin-bottom: 5px;				
-			}			
+				margin-bottom: 5px;
+			}
 		}
 	}
-} 
+}

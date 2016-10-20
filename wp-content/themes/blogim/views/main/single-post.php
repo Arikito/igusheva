@@ -29,13 +29,11 @@ $blogim_img = ($blogim_img == '') ? esc_url( get_template_directory_uri() ) . '/
 	</div><!-- end of format text -->
 	
 	<div class="single-util">
-		<?php wp_link_pages( array(
-			'before'      => '<div class="page-links"><strong class="page-links-title">' . __( 'Pages:', 'blogim' ) . '</strong>',
-			'after'       => '</div>',
-			'link_before' => '<span>',
-			'link_after'  => '</span>',
-			) );
-		?>
+		<?php the_post_navigation( array(
+	            'prev_text'                 => __( 'previous', 'blogim' ),
+	            'next_text'                 => __( 'next', 'blogim' ),
+	            'screen_reader_text' 		=> __(' ', 'blogim'),
+        ) ); ?>
 		<?php if(has_tag()):?>
 			<div class="single-tags">
 				<span><?php _e('Tags', 'blogim');?> : </span>
@@ -114,7 +112,7 @@ $blogim_img = ($blogim_img == '') ? esc_url( get_template_directory_uri() ) . '/
 				 <div class="meta">
 					<h4><a href="<?php esc_url(the_permalink()); ?>"><?php the_title();?></a></h4>
 					<strong  class="cat s-10"><?php the_category(' , ');?></strong>
-					<span class="date s-11"><?php the_time('M d, Y'); ?></span>
+					<span class="date s-11"><?php the_time(get_option( 'date_format' )); ?></span>
 				 </div>
 			 </div><!-- end of caption -->
 		 </div><!-- end of content -->

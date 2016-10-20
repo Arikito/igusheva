@@ -1,34 +1,44 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying pages
  *
  * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * Please note that this is the WordPress construct of pages and that
+ * other "pages" on your WordPress site will use a different template.
  *
- * @package kanu
+ * @package WordPress
+ * @subpackage Boson
+ * @since Boson 1.0
  */
 
-get_header(); ?>
+get_header();
+ 
+    if( is_front_page() ){
+        echo do_shortcode('[rev_slider home-1]');
+    }else{
+        get_template_part( 'templates/page', 'breadcrumb' ); 
+    
+    }
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		// Start the loop.
+		while ( have_posts() ) : the_post();
+            
+            $boson_page_layout = '';
+            //Get Page Meta Data.
+            if( function_exists( 'rwmb_meta' ) ){
+                //Get Post Meta Value.
+                $boson_page_layout = rwmb_meta( 'boson_layout', false, get_the_ID() );
+            }
+    
+			// Include the page content template.
+		    get_template_part( 'content', $boson_page_layout );
 
-			<?php while( have_posts() ) : the_post(); ?>
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open( get_queried_object_id() ) || get_comments_number() ) :
+                    comments_template();
+			endif;
 
-				<?php get_template_part( 'content', 'page' ); ?>
-
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() )
-						comments_template();
-				?>
-
-			<?php endwhile; // end of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+		// End the loop.
+		endwhile;
+        
+     get_footer(); 

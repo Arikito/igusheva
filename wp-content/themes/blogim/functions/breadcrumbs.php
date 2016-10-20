@@ -27,11 +27,11 @@ function blogimBread(){
 	/* === END OF OPTIONS === */
 
 	global $post;
-	$homeLink = home_url() . '/';
+	$homeLink = home_url('/');
 	$linkBefore = ' ';
 	$linkAfter = ' ';
 	$linkAttr = ' ';
-	$link = $linkBefore . '<a' . $linkAttr . ' href="esc_url(%1$s)">%2$s</a>' . $linkAfter;
+	$link = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s</a>' . $linkAfter;
 
 	if (is_home() || is_front_page()) {
 		if ($showOnHome == 1) echo '<div class="bread"><a href="' . esc_url($homeLink) . '">' . $text['home'] . '</a></div>';

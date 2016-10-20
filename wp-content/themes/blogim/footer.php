@@ -10,7 +10,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-7 col-sm-6">
-            <a href="<?php echo esc_url('https://indigothemes.com/products/blogim-wordpress-theme/'); ?>"><?php printf( __( 'Powered by %s', 'blogim' ), 'blogim' ); ?></a>                            
+            <?php printf( __( 'Powered by','blogim' )); ?> <a href="<?php echo esc_url('https://indigothemes.com/products/blogim-wordpress-theme/'); ?>"><?php printf( __( 'BlogIM WordPress Theme','blogim' )); ?></a>                            
           </div><!-- end of col -->
           <div class="col-md-5 col-sm6">
             <?php

@@ -1,13 +1,13 @@
 /*
 Theme Name: Passionate
-Version: 1.2.2
+Version: 1.2.7
 Author: Daisy Themes
 Author URI: https://daisythemes.com/
 Theme URI: https://daisythemes.com/theme/passionate/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: passionate
-Tags: light, white, one-column, two-columns, three-columns, right-sidebar, left-sidebar, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, threaded-comments, featured-images, post-formats, translation-ready, full-width-template, fluid-layout, sticky-post
+Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-background, custom-menu, custom-colors, threaded-comments, featured-images, post-formats, translation-ready, full-width-template, sticky-post
 Description: Passionate is a professional multipurpose WordPress theme built with Bootstrap grid and is fully responsive for all the screen sizes. It can be used for Business, Portfolio, Personal, Blogging, Agency or any other types of site. Passionate theme comes with built-in widgets and widgets positions, customizer to customize and setup logo, color and layouts. Currently it have 10 widgets positions and  8 built-in widgets for Call to Action, Recent Posts, Image Slider, Clients Logos, Recent Works(Portfolio), Services Listing, Social Profiles Icons(13 different social icons) and Testimonial.  It also includes wide and narrow layout and option to have top menu sticky. We are planning to have some more widgets in future theme updates. You can get support in http://daisythemes.com/support and check demo at http://demo.daisythemes.com/passionate/
 
 This theme, like WordPress, is licensed under the GPL.
@@ -15,6 +15,140 @@ This theme, like WordPress, is licensed under the GPL.
 Passionate is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
+
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid rgba(39,48,57,.2);
+	border-radius: 3px;
+	background: rgba(39,48,57,.05);
+	color: rgba(39,48,57,.8);
+	line-height: 1;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	padding: 11px 15px;
+	font-size: 1em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: rgba(39,48,57,.25);
+	background: rgba(39,48,57,.1);
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+	color: rgba(39,48,57,.8);
+	border-radius: 3px;
+	border: 1px solid rgba(39,48,57,.25);
+	min-width: 60%;
+	max-width: 100%;
+	padding: 5px 10px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	color: #111;
+	outline: none;
+	border-color: rgba(39,48,57,.5);
+}
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -372,7 +506,6 @@ a:hover,
 .dt-pagination-nav .current,
 .dt-footer .dt-news-layout-wrap a:hover,
 .dt-footer-bar a:hover,
-.dt-nav-md-trigger:hover .fa,
 .current-menu-item.menu-item-has-children:after,
 .current-menu-item.menu-item-has-children:hover:after,
 .menu-item-has-children:hover:after,
@@ -402,7 +535,6 @@ a:hover,
 .dt-services-meta h2 span,
 .dt-testimonial-wrap h2 span,
 .dt-news-layout-wrap h2 span,
-.dt-main-cont .wpcf7-form input[type="submit"]:hover,
 .dt-pagination-nav .current,
 .dt-pagination-nav a:hover {
 	border-color: rgba(23,190,187,.95);
@@ -586,7 +718,6 @@ img {
 
 .dt-logo img {
 	max-width: 100%;
-	max-height: 38px;
 	margin: 5px 0;
 }
 
@@ -888,7 +1019,6 @@ img {
 	width: 100%;
 }
 
-
 /*--------------------------------------------------------------
 # Menu
 --------------------------------------------------------------*/
@@ -1076,7 +1206,6 @@ img {
 	padding: 5px 15px;
 }
 
-
 /*--------------------------------------------------------------
 # Front page Image Slider
 --------------------------------------------------------------*/
@@ -1086,8 +1215,6 @@ img {
 	overflow: hidden;
 
 	width: 100%;
-	height: 0;
-	padding-bottom: 50%;
 }
 
 .dt-image-slider-holder {
@@ -1102,22 +1229,6 @@ img {
 	overflow: hidden;
 
 	width: 100%;
-	height: 0;
-	padding-bottom: 50%;
-}
-
-.dt-slider-img img {
-	position: absolute;
-	top: -9999px;
-	right: -9999px;
-	bottom: -9999px;
-	left: -9999px;
-
-	width: auto;
-	min-width: 100%;
-	max-width: 500%;
-	height: 100%;
-	margin: auto;
 }
 
 .dt-image-slider-desc {
@@ -1926,6 +2037,65 @@ aside.dt-sidebar {
 }
 
 /*--------------------------------------------------------------
+# Post Navigation
+--------------------------------------------------------------*/
+.post-navigation {
+	margin: 30px 0 60px;
+	padding: 30px 0;
+	border-top: 1px solid rgba(39,48,57,.05);
+}
+
+.post-navigation .nav-previous,
+.post-navigation .nav-next {
+	font-size: 0;
+	position: relative;
+	display: inline-block;
+	width: 50%;
+}
+
+.post-navigation .nav-previous a:before,
+.post-navigation .nav-previous a:after,
+.post-navigation .nav-next a:before,
+.post-navigation .nav-next a:after {
+	position: absolute;
+	top: 0;
+	font-size: 22px;
+
+}
+.post-navigation .nav-previous a:before,
+.post-navigation .nav-next a:before {
+	content: ' ';
+	width: 24px;
+	height: 32px;
+	font-family: 'FontAwesome';
+	left: 0;
+	font-size: 36px;
+}
+
+.post-navigation .nav-previous a:after,
+.post-navigation .nav-next a:after {
+	content: 'Previous Post';
+	width: calc(100% - 32px);
+	left: 32px;
+	padding-top: 2px;
+	font-weight: 500;
+}
+
+.post-navigation .nav-next a:before {
+	content: '';
+	right: 0;
+	left: auto;
+	text-align: right;
+}
+
+.post-navigation .nav-next a:after {
+	content: 'Next Post';
+	right: 32px;
+	left: auto;
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
 # Archive Page
 --------------------------------------------------------------*/
 .dt-archive-post {
@@ -1954,8 +2124,16 @@ aside.dt-sidebar {
 }
 
 .dt-archive-post .entry-meta .posted-on,
-.dt-archive-post .cat-links {
-	margin-right: 15px;
+.dt-archive-post .cat-links,
+.cat-links,
+.tags-links {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.cat-links a,
+.tags-links a {
+	padding-left: 6px;
 }
 
 .dt-archive-post .entry-meta a,
@@ -2013,6 +2191,10 @@ aside.dt-sidebar {
 	opacity: 1;
 }
 
+.dt-pagination-nav {
+	margin-bottom: 25px;
+}
+
 .dt-pagination-nav a,
 .dt-pagination-nav .current {
 	display: inline-block;
@@ -2022,58 +2204,6 @@ aside.dt-sidebar {
 
 	border: 1px solid #e5e5e5;
 	border-radius: 2px;
-}
-
-/*--------------------------------------------------------------
-# Contact Form
---------------------------------------------------------------*/
-.dt-main-cont .wpcf7-form span {
-	margin-top: 8px;
-	display: block;
-}
-
-.dt-main-cont .wpcf7-form input[type="text"],
-.dt-main-cont .wpcf7-form input[type="email"],
-.dt-main-cont .wpcf7-form input[type="url"],
-.dt-main-cont .wpcf7-form textarea {
-	width: 90%;
-	border: 1px solid rgba(0,0,0,.12);
-	padding: 5px 15px;
-	border-radius: 4px;
-}
-
-.dt-main-cont .wpcf7-form input[type="text"]:focus,
-.dt-main-cont .wpcf7-form input[type="email"]:focus,
-.dt-main-cont .wpcf7-form input[type="url"]:focus,
-.dt-main-cont .wpcf7-form textarea:focus {
-	outline: none;
-	border-color: rgba(0,0,0,.25);
-}
-
-.dt-main-cont .wpcf7-form input[type="submit"] {
-	margin-top: 5px;
-	border: 1px solid rgba(0,0,0,.12);
-	border-radius: 4px;
-	font-size: 18px;
-	display: inline-block;
-	padding: 7px 30px;
-	background: transparent;
-}
-
-.dt-main-cont .wpcf7-form input[type="submit"]:hover {
-	color: #fff;
-}
-
-.dt-sidebar .search-field {
-	border: 1px solid rgba(0,0,0,.12);
-	padding: 5px 15px;
-	border-radius: 4px 0 0 4px;
-	font-weight: 400;
-}
-
-.dt-sidebar .search-submit {
-	padding: 5px 10px;
-	border: 1px solid rgba(0,0,0,.2);
 }
 
 /*--------------------------------------------------------------
@@ -2142,6 +2272,13 @@ aside.dt-sidebar {
 		padding: 12px 16px;
 	}
 }
+
+@media all and (max-width: 1200px) and (min-width: 992px) {
+	.dt-main-menu {
+		margin: 0 -13px;
+	}
+}
+
 
 @media all and (max-width: 991px) {
 	.dt-layout-boxed {
@@ -2282,6 +2419,13 @@ aside.dt-sidebar {
 
 	.dt-main-menu {
 		display: none;
+	}
+
+	.dt-nav-md-trigger {
+		background: #17bebb;
+		margin: 0 -15px;
+		padding: 10px 15px;
+		color: #fff;
 	}
 
 	.dt-nav-md-trigger,

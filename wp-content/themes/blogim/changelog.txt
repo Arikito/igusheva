@@ -40,3 +40,15 @@ Version 1.2.2
 Version 1.2.3
 -Theme Optimisation.
 
+Version 1.2.4
+-Added BlogIM Pro Features Page.
+
+Version 1.2.5
+- Fixed Background Color Issue on Scroll.
+
+Version 1.2.6
+- Fixed Footer Link.
+
+Version 1.2.7
+- Changed Theme URI and removed deprecated tag.
+

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Blogim\n"
-"POT-Creation-Date: 2016-04-25 18:29+0530\n"
+"POT-Creation-Date: 2016-09-26 12:52+0530\n"
 "PO-Revision-Date: 2015-11-19 15:52+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -53,8 +53,11 @@ msgid "Comments are closed."
 msgstr ""
 
 #: footer.php:13
-#, php-format
-msgid "Powered by %s"
+msgid "Powered by"
+msgstr ""
+
+#: footer.php:13
+msgid "BlogIM WordPress Theme"
 msgstr ""
 
 #: functions.php:33
@@ -66,47 +69,51 @@ msgstr ""
 msgid "read more"
 msgstr ""
 
-#: functions.php:53
+#: functions.php:54 functions.php:55
+msgid "BlogIM Pro Features"
+msgstr ""
+
+#: functions.php:82
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:54
+#: functions.php:83
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:74 sidebar.php:2
+#: functions.php:103 sidebar.php:2
 msgid "Main"
 msgstr ""
 
-#: functions.php:83
+#: functions.php:112
 msgid "Single-page"
 msgstr ""
 
-#: functions.php:87
+#: functions.php:116
 msgid "Single-post"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:120
 msgid "Category-page"
 msgstr ""
 
-#: functions.php:95
+#: functions.php:124
 msgid "404-page"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:128
 msgid "Search-page"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:141
 msgid "Footer Widget 2"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:145
 msgid "Footer Widget 3"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:149
 msgid "Footer Widget 4"
 msgstr ""
 
@@ -417,7 +424,7 @@ msgstr ""
 #: views/main/detail-attachment.php:21 views/main/full-post-grid.php:71
 #: views/main/full-post-list.php:65 views/main/full-post.php:33
 #: views/main/grid.php:39 views/main/list.php:34 views/main/single-page.php:42
-#: views/main/single-post.php:139
+#: views/main/single-post.php:137
 msgid "Sorry, no posts matched your criteria. Try something else. "
 msgstr ""
 
@@ -446,19 +453,31 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: views/main/single-page.php:22 views/main/single-post.php:33
+#: views/main/single-page.php:22
 msgid "Pages:"
 msgstr ""
 
-#: views/main/single-post.php:41
+#: views/main/single-post.php:33
+msgid "previous"
+msgstr ""
+
+#: views/main/single-post.php:34
+msgid "next"
+msgstr ""
+
+#: views/main/single-post.php:35
+msgid " "
+msgstr ""
+
+#: views/main/single-post.php:39
 msgid "Tags"
 msgstr ""
 
-#: views/main/single-post.php:86
+#: views/main/single-post.php:84
 msgid "You Might Also Like"
 msgstr ""
 
-#: views/main/single-post.php:123
+#: views/main/single-post.php:121
 msgid "No related post available"
 msgstr ""
 
@@ -495,7 +514,9 @@ msgid "BlogIM"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://indigothemes.com/products/blogim-wordpress-theme/"
+msgid ""
+"https://indigothemes.com/products/free-responsive-wordpress-blog-theme-"
+"blogim/"
 msgstr ""
 
 #. Description of the plugin/theme

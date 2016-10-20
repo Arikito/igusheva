@@ -1,4 +1,38 @@
 
+### 0.1.20 - 21/09/2016
+**Changes:** 
+- Add recommandated child theme
+
+### 0.1.19 - 21/09/2016
+**Changes:** 
+- Redo the layout of the icon picker
+- Allow HTML tags in the About us section
+
+### 0.1.18 - 09/09/2016
+**Changes:** 
+- Update Fontawesome to 4.6.3
+- Fixed issue with Latest news images
+- Increased the About us section, when no image is provided
+- Update tags
+- Made notice of Llorix Companion plugin visible just to admins
+
+### 0.1.17 - 12/07/2016
+**Changes:** 
+- Fixed responsive issue with menu
+- Added filter for footer copyright
+
+
+### 0.1.15 - 05/05/2016
+
+ Changes: 
+
+
+ * #7 - make only one request for google fonts
+ * Merge pull request #67 from cristian-ungureanu/development
+
+Development
+ *  Fixed issue with Jetpack sharing on latest news section #68
+
 
 ### 0.1.14 - 13/04/2016
 

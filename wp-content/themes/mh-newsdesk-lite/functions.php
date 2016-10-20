@@ -1,7 +1,9 @@
 <?php
 
-/***** Fetch Options *****/
+/***** Fetch Theme Data & Options *****/
 
+$mh_newsdesk_lite_data = wp_get_theme('mh_newsdesk_lite');
+$mh_newsdesk_lite_version = $mh_newsdesk_lite_data['Version'];
 $mh_newsdesk_lite_lite_options = get_option('mh_newsdesk_lite_options');
 
 /***** Custom Hooks *****/
@@ -56,13 +58,13 @@ add_action('template_redirect', 'mh_newsdesk_lite_content_width');
 
 if (!function_exists('mh_newsdesk_lite_scripts')) {
 	function mh_newsdesk_lite_scripts() {
+		global $mh_newsdesk_lite_version;
 		wp_enqueue_style('mh-google-fonts', "https://fonts.googleapis.com/css?family=Oswald:400,700,300|PT+Serif:400,400italic,700,700italic", array(), null);
 		wp_enqueue_style('mh-font-awesome', get_template_directory_uri() . '/includes/font-awesome.min.css', array(), null);
-		wp_enqueue_style('mh-style', get_stylesheet_uri(), false, '1.3.0');
-		wp_enqueue_script('mh-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'));
-		if (!is_admin()) {
-			if (is_singular() && comments_open() && (get_option('thread_comments') == 1))
-				wp_enqueue_script('comment-reply');
+		wp_enqueue_style('mh-style', get_stylesheet_uri(), false, $mh_newsdesk_lite_version);
+		wp_enqueue_script('mh-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), $mh_newsdesk_lite_version);
+		if (is_singular() && comments_open() && get_option('thread_comments') == 1) {
+			wp_enqueue_script('comment-reply');
 		}
 	}
 }

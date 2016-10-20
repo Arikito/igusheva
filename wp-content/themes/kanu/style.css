@@ -1,18 +1,16 @@
 /*
 Theme Name: Kanu
-Author: CK Themes
+Theme URI: http://wp.ckthemes.com/kanu
+Author: CKThemes
 Author URI: http://www.ckthemes.com/
 Description: kanu is a Modern minimal ultra responsive theme with a lot of features including responsive featured slider and Fully Customizable Header and Footer. kanu has been translated into Many Languages including Dutch, German, French, Italian, Portuguese, Spanish & many more.
-Version: 2.4
+Version: 3.1
 License: GNU General Public License
-License URI: license.txt
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: two-columns, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
 Text Domain: kanu
-Tags: white, light, custom-background, two-columns, right-sidebar, fluid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready
-
-kanu WordPress Theme, Copyright 2016 CK Themes(ckthemes.com).
-kanu WordPress Theme is distributed under the terms of the GNU GPL v3.
-
 */
+
 .wp-caption { }
 .wp-caption-text { }
 .sticky { }
@@ -21,4 +19,4 @@ kanu WordPress Theme is distributed under the terms of the GNU GPL v3.
 .alignright { }
 .aligncenter { }
 .alignleft { }
-.screen-reader-text{ }
+.screen-reader-text{}

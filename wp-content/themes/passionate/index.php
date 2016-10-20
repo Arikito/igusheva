@@ -17,7 +17,16 @@ get_header(); ?>
 	<div class="container">
 		<div class="dt-main-cont">
 			<div class="row">
-				<div class="col-lg-8 col-md-8">
+
+				<?php if ( get_theme_mod( 'passionate_page_layout', 0 ) == 'left_sidebar' ) : ?>
+
+					<div class="col-lg-4 col-md-4">
+						<?php get_sidebar( 'left' ); ?>
+					</div><!-- .col-lg-4 .col-md-4 -->
+
+				<?php endif; ?>
+
+				<div class="<?php if ( get_theme_mod( 'passionate_page_layout', 0 ) == 'left_sidebar' || get_theme_mod( 'passionate_page_layout', 0 ) == 'right_sidebar' ) : ?>col-lg-8 col-md-8<?php else: ?>col-lg-12 col-md-12<?php endif; ?>">
 					<div id="primary" class="content-area">
 						<main id="main" class="site-main" role="main">
 
@@ -56,9 +65,13 @@ get_header(); ?>
 					</div><!-- #primary -->
 				</div><!-- .col-lg-8 .col-md-8 -->
 
-				<div class="col-lg-4 col-md-4">
-					<?php get_sidebar(); ?>
-				</div><!-- .col-lg-4 .col-md-4 -->
+				<?php if ( get_theme_mod( 'passionate_page_layout', 0 ) == 'right_sidebar' ) : ?>
+
+					<div class="col-lg-4 col-md-4">
+						<?php get_sidebar(); ?>
+					</div><!-- .col-lg-4 .col-md-4 -->
+
+				<?php endif; ?>
 			</div><!-- .row -->
 		</div><!-- .dt-main-cont -->
 	</div><!-- .container -->

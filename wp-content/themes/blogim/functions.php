@@ -49,6 +49,35 @@ function blogim_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'blogim_excerpt_length', 999 );
 
+function blogim_pro_menu_settings() {
+    $blogim_menu = array(
+        'page_title' => __('BlogIM Pro Features', 'blogim'),
+        'menu_title' => __('BlogIM Pro Features', 'blogim'),
+        'capability' => 'edit_theme_options',
+        'menu_slug' => 'blogimpro',
+        'callback' => 'blogim_pro_page'
+    );
+    return apply_filters('blogim_pro_menu', $blogim_menu);
+}
+
+add_action('admin_menu', 'blogim_options_add_page');
+
+function blogim_options_add_page() {
+    $blogim_menu = blogim_pro_menu_settings();
+    add_theme_page($blogim_menu['page_title'], $blogim_menu['menu_title'], $blogim_menu['capability'], $blogim_menu['menu_slug'], $blogim_menu['callback']);
+}
+
+function blogim_pro_page(){?>
+
+<div class="blogim_proversion">
+	<a href="https://indigothemes.com/products/blogim-pro-wordpress-theme-jvzoo/" title="Download BlogIM Pro Now">
+		<img src ="<?php echo get_template_directory_uri();?>/assets/img/Pro_1_01.png"/>
+		<img src ="<?php echo get_template_directory_uri();?>/assets/img/Pro_1_02.png" />
+	</a>
+</div>
+
+<?php
+}
 function blogim_RegisterMenu(){
     register_nav_menu('mainmenu',esc_html__('Main Menu','blogim'));
 	register_nav_menu('footer_menu',esc_html__('Footer Menu','blogim'));

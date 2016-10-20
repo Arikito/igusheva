@@ -22,17 +22,19 @@
 
 <body <?php body_class(); ?>>
 
-	<div class="dt-layout-boxed<?php if ( get_theme_mod( 'passionate_default_layout', 0 ) == 'wide_layout' ) : ?> dt-layout-wide<?php endif; ?>">
+	<div class="dt-layout-boxed<?php if ( get_theme_mod( 'passionate_default_layout' ) == 'wide_layout' ) : ?> dt-layout-wide<?php endif; ?>">
 		<header class="dt-header">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 						<div class="dt-logo">
 
-							<?php if ( get_theme_mod( 'passionate_logo', 0 ) != '' ) : ?>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'passionate_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
-							<?php else : ?>
-								<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<?php
+							if ( function_exists( 'get_custom_logo' ) && has_custom_logo() ) :
+								the_custom_logo();
+							else :
+							?>
+								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 								<?php
 								$description = get_bloginfo( 'description', 'display' );
 								if ( $description || is_customize_preview() ) : ?>
@@ -117,4 +119,3 @@
 				</div><!-- .container-->
 			</div><!-- .dt-breadcrumbs-->
 		<?php endif; ?>
-

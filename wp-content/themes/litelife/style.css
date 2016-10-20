@@ -325,7 +325,8 @@ footer {
   clear: both;
   height: 45px;
   text-align: center;
-  color: #666; }
+  color: #666;
+  margin-top: 30px; }
 
 header {
   width: 100%;
@@ -541,7 +542,6 @@ html.animations header {
 .widget_recent_comments ul {
   color: #444; }
   .widget_recent_comments ul li {
-    height: 30px;
     line-height: 25px;
     border-bottom: 1px dashed #ccc; }
     .widget_recent_comments ul li:last-child {

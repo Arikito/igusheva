@@ -1,24 +1,28 @@
 <?php
 /**
- * The template used for displaying page content in page.php
+ * The template used for displaying page content
  *
- * @package kanu
+ * @package WordPress
+ * @subpackage Boson
+ * @since Boson 1.0
  */
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'kanu' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'kanu' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
-</article><!-- #post-## -->
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <?php 
+        //Page Contents
+        the_content(); 
+		
+        //Page Pagination
+        wp_link_pages( array(
+			'before'      => '<ul class="pagenav-style"><li>',
+			'after'       => '</li></ul>',
+			'link_before'      => '',
+            'link_after'       => '',
+            'next_or_number'   => 'number',
+            'separator'        => '</li><li>',
+            'nextpagelink'     => esc_html__( 'Next <span>&rarr;</span>', 'boson' ),
+            'previouspagelink' => esc_html__( '<span></span> Preve', 'boson' ),
+            'pagelink'         => '%',
+		) );
+	?>
+</div>

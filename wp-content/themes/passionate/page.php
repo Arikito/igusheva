@@ -21,7 +21,7 @@ get_header(); ?>
 				<?php if ( get_theme_mod( 'passionate_page_layout', 0 ) == 'left_sidebar' ) : ?>
 
 					<div class="col-lg-4 col-md-4">
-						<?php get_sidebar( 'left' ); ?>
+						<?php get_sidebar(); ?>
 					</div><!-- .col-lg-4 .col-md-4 -->
 
 				<?php endif; ?>

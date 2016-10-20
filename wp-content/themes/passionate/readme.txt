@@ -1,5 +1,5 @@
 === Passionate ===
-Version: 1.2.2
+Version: 1.2.7
 Requires at least: 4.3
 Stable tag: 1.2
 
@@ -68,6 +68,46 @@ Passionate is distributed under the terms of the GNU GPL v3
 
 
 === Changelog ===
+
+Version 1.2.7
+* removed un-necessary tags
+
+Version 1.2.6
+* Fixed featured image for static front page
+* Added background color of menu for small screen sizes
+* Fixed issue occurs in archive.php
+
+Version 1.2.5
+* Fixed single post issues
+
+* Added nice post navigation for single post
+
+* Added CSS support for forms
+
+* Fixed issues for spacing and margins for Tags and Categories links
+
+Version 1.2.4
+* Fixed front-page issue for showing recent blog posts and static page.
+
+Version 1.2.3
+* Removed unused folders: Language, 
+
+* Compatible and tested up to WordPress 4.5.1
+
+* Removed manual logo upload with WordPress in-built logo upload functionality
+
+* Fixed Background for Menu in Wide Layout
+
+* Back-end (Admin) : Fixed CSS for widgets input[type="number"]
+
+* Fixed unnecessary theme Customizer style load
+
+* Fixed Header Text Color for Theme Customizer
+
+* Created New Page template with Image slider
+
+* Added Option to Image slider so you can choose specific number of slides
+
 Version 1.2.2
 * Removed Unused files and defauld image
 

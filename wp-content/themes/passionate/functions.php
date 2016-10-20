@@ -27,6 +27,11 @@ function passionate_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	/**
+	 * Add Custom Logo Support
+	 */
+	add_theme_support( 'custom-logo' );
+
 	// Custom Image Crop
 	add_image_size( 'passionate-service-img', 96, 96, true );
 	add_image_size( 'passionate-works-img', 500, 370, true );

@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 		watch: {
 			options: {
 				spawn: true,
-				livereload: false,
+				// livereload: false,
 			},
 			scss: {
 				files: ['**/*.scss'],

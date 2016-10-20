@@ -9,20 +9,9 @@ function passionate_widgets_init() {
 
     // Register Right Sidebar
     register_sidebar( array(
-        'name'          => esc_html__( 'Right Sidebar', 'passionate' ),
+        'name'          => esc_html__( 'Sidebar', 'passionate' ),
         'id'            => 'dt-right-sidebar',
         'description'   => __( 'Add widgets to Show widgets at right panel of page', 'passionate' ),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
-
-    // Register Left Sidebar
-    register_sidebar( array(
-        'name'          => esc_html__( 'Left Sidebar', 'passionate' ),
-        'id'            => 'dt-left-sidebar',
-        'description'   => __( 'Add widgets to Show widgets at Left panel of page', 'passionate' ),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
         'before_title'  => '<h2 class="widget-title">',
@@ -375,7 +364,8 @@ class passionate_image_slider extends WP_Widget {
 
     public function widget( $args, $instance ) {
 
-        $dt_img_slider_values = isset( $instance['dt_img_slider'] ) ? $instance['dt_img_slider'] : '';
+        $dt_img_slider_values   = isset( $instance['dt_img_slider'] ) ? $instance['dt_img_slider'] : '';
+        $no_of_posts            = isset( $instance['no_of_posts'] ) ? $instance['no_of_posts'] : '';
 
         ?>
 
@@ -383,36 +373,74 @@ class passionate_image_slider extends WP_Widget {
             <div class="swiper-container">
                 <div class="swiper-wrapper">
 
-                    <?php if( is_array( $dt_img_slider_values ) ) { ?>
+                    <?php if ( $no_of_posts < 4 ) :
 
-                    <?php foreach ( $dt_img_slider_values as $dt_img_slider_key => $dt_img_slider_value ) : ?>
+                        $keys = array_keys($dt_img_slider_values);
 
-                        <div class="swiper-slide">
-                            <div class="dt-image-slider-holder">
-                                <figure class="dt-slider-img">
-                                    <a href="<?php echo esc_url( $dt_img_slider_value['url'] ); ?>"><img src="<?php echo esc_url( $dt_img_slider_value['image'] ); ?>" alt="<?php echo esc_attr( $dt_img_slider_value['title'] ); ?>" /></a>
+                        for($k=0; $k < $no_of_posts; $k++) {
+                            $dt_img_slider_key = $keys[$k];
+                            $dt_img_slider_value = $dt_img_slider_values[$dt_img_slider_key];
+                        ?>
 
-                                    <?php if( $dt_img_slider_value['title'] != '' ) : ?>
+                            <div class="swiper-slide">
+                                <div class="dt-image-slider-holder">
+                                    <figure class="dt-slider-img">
+                                        <a href="<?php echo esc_url($dt_img_slider_value['url']); ?>"><img
+                                                src="<?php echo esc_url($dt_img_slider_value['image']); ?>"
+                                                alt="<?php echo esc_attr($dt_img_slider_value['title']); ?>"/></a>
 
-                                        <div class="dt-image-slider-desc">
-                                            <h2><?php echo esc_attr( $dt_img_slider_value['title'] ); ?></h2>
+                                        <?php if ($dt_img_slider_value['title'] != '') : ?>
 
-                                            <?php if( $dt_img_slider_value['description'] != '' ) : ?>
+                                            <div class="dt-image-slider-desc">
+                                                <h2><?php echo esc_attr($dt_img_slider_value['title']); ?></h2>
 
-                                                <p><?php echo esc_textarea( $dt_img_slider_value['description'] ); ?></p>
+                                                <?php if ($dt_img_slider_value['description'] != '') : ?>
 
-                                            <?php endif; ?>
-                                        </div><!-- .dt-image-slider-desc -->
+                                                    <p><?php echo esc_textarea($dt_img_slider_value['description']); ?></p>
 
-                                    <?php endif; ?>
+                                                <?php endif; ?>
+                                            </div><!-- .dt-image-slider-desc -->
 
-                                </figure><!-- .dt-featured-post-img -->
-                            </div><!-- .dt-image-slider-holder -->
-                        </div><!-- .swiper-slide -->
+                                        <?php endif; ?>
 
-                   <?php endforeach; ?>
+                                    </figure><!-- .dt-featured-post-img -->
+                                </div><!-- .dt-image-slider-holder -->
+                            </div><!-- .swiper-slide -->
 
-                    <?php } ?>
+                        <?php
+                        }
+                    ?>
+
+                    <?php else: ?>
+
+                        <?php foreach ( $dt_img_slider_values as $dt_img_slider_key => $dt_img_slider_value ) : ?>
+
+                            <div class="swiper-slide">
+                                <div class="dt-image-slider-holder">
+                                    <figure class="dt-slider-img">
+                                        <a href="<?php echo esc_url( $dt_img_slider_value['url'] ); ?>"><img src="<?php echo esc_url( $dt_img_slider_value['image'] ); ?>" alt="<?php echo esc_attr( $dt_img_slider_value['title'] ); ?>" /></a>
+
+                                        <?php if( $dt_img_slider_value['title'] != '' ) : ?>
+
+                                            <div class="dt-image-slider-desc">
+                                                <h2><?php echo esc_attr( $dt_img_slider_value['title'] ); ?></h2>
+
+                                                <?php if( $dt_img_slider_value['description'] != '' ) : ?>
+
+                                                    <p><?php echo esc_textarea( $dt_img_slider_value['description'] ); ?></p>
+
+                                                <?php endif; ?>
+                                            </div><!-- .dt-image-slider-desc -->
+
+                                        <?php endif; ?>
+
+                                    </figure><!-- .dt-featured-post-img -->
+                                </div><!-- .dt-image-slider-holder -->
+                            </div><!-- .swiper-slide -->
+
+                       <?php endforeach; ?>
+
+                    <?php endif; ?>
 
                 </div><!-- .swiper-wrapper -->
 
@@ -427,6 +455,12 @@ class passionate_image_slider extends WP_Widget {
     }
 
     public function form( $instance ) {
+
+        $instance = wp_parse_args(
+            (array) $instance, array(
+                'no_of_posts'        => '4'
+            )
+        );
 
         $dt_img_slider_values = isset( $instance['dt_img_slider'] ) ? $instance['dt_img_slider'] : '';
         if ( ! empty( $dt_img_slider_values ) ) {
@@ -486,13 +520,26 @@ class passionate_image_slider extends WP_Widget {
                 </div><!-- .dt-admin-slider-wrap -->
 
             <?php }
-        }
+        } ?>
+
+        <div class="dt-admin-recent-posts">
+            <div class="dt-admin-input-wrap">
+                <label for="<?php echo $this->get_field_id( 'no_of_posts' ); ?>"><strong><?php _e( 'No. of Slides', 'passionate' ); ?></strong></label>
+
+                <input type="number" id="<?php echo $this->get_field_id( 'no_of_posts' ); ?>" name="<?php echo $this->get_field_name( 'no_of_posts' ); ?>" value="<?php echo esc_attr( $instance['no_of_posts'] ); ?>">
+
+                <p><?php _e( '[ Note: You can set number less or equal to 4, because there is only 4 slides that can be added.]', 'passionate' ); ?></p>
+            </div><!-- .dt-admin-input-wrap -->
+        </div><!-- .dt-news-list-1 -->
+
+        <?php
     }
 
     public function update( $new_instance, $old_instance ) {
 
         $instance = $old_instance;
-        $instance['dt_img_slider'] = array();
+        $instance['dt_img_slider']  = array();
+        $instance['no_of_posts']    = strip_tags( stripslashes( $new_instance['no_of_posts']  ) );
 
         if ( isset( $new_instance[ 'dt_img_slider' ] ) ) {
             foreach ( $new_instance[ 'dt_img_slider' ] as $stream_source ) {
@@ -1092,9 +1139,26 @@ class passionate_logo_slider extends WP_Widget {
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <ul>
-                            <?php foreach ( $dt_logo_slider_values as $dt_logo_slider_key => $dt_logo_slider_value ) : ?>
-                                <?php if( ! empty ( $dt_logo_slider_value['image'] ) ) : ?><li class="transition35"><a href="<?php if( ! empty ( $dt_logo_slider_value['url'] ) ) : echo esc_url( $dt_logo_slider_value['url'] ); else : echo esc_attr( '#' ); endif; ?>" title="<?php if( ! empty ( $dt_logo_slider_value['title'] ) ) : echo esc_attr( $dt_logo_slider_value['title'] ); else : echo _e( 'Logo', 'passionate' ); endif; ?>" target="_blank"><img src="<?php echo esc_url( $dt_logo_slider_value['image'] ); ?>" title="<?php if( ! empty ( $dt_logo_slider_value['title'] ) ) : echo esc_attr( $dt_logo_slider_value['title'] ); else : echo _e( 'Logo', 'passionate' ); endif; ?>" alt="<?php if( ! empty ( $dt_logo_slider_value['title'] ) ) : echo esc_attr( $dt_logo_slider_value['title'] ); else : echo _e( 'Logo', 'passionate' ); endif; ?>" /> </a></li><?php endif; ?>
-                            <?php endforeach; ?>
+
+                            <?php
+                            if ( is_array( $dt_logo_slider_values ) ) :
+
+                                foreach ( $dt_logo_slider_values as $dt_logo_slider_key => $dt_logo_slider_value ) :
+
+                                    if( ! empty ( $dt_logo_slider_value['image'] ) ) : ?>
+
+                                        <li class="transition35">
+                                            <a href="<?php if( ! empty ( $dt_logo_slider_value['url'] ) ) : echo esc_url( $dt_logo_slider_value['url'] ); else : echo esc_attr( '#' ); endif; ?>" title="<?php if( ! empty ( $dt_logo_slider_value['title'] ) ) : echo esc_attr( $dt_logo_slider_value['title'] ); else : echo _e( 'Logo', 'passionate' ); endif; ?>" target="_blank">
+                                                <img src="<?php echo esc_url( $dt_logo_slider_value['image'] ); ?>" title="<?php if( ! empty ( $dt_logo_slider_value['title'] ) ) : echo esc_attr( $dt_logo_slider_value['title'] ); else : echo _e( 'Logo', 'passionate' ); endif; ?>" alt="<?php if( ! empty ( $dt_logo_slider_value['title'] ) ) : echo esc_attr( $dt_logo_slider_value['title'] ); else : echo _e( 'Logo', 'passionate' ); endif; ?>" />
+                                            </a>
+                                        </li>
+
+                                    <?php endif;
+
+                                endforeach;
+
+                            endif;
+                            ?>
 
                             <div class="clearfix"></div>
                         </ul>

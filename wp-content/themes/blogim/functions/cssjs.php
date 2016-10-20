@@ -16,6 +16,7 @@ if( ! class_exists('blogim_CSSJS')){
 		public function __construct(){
 			add_action('wp_enqueue_scripts' ,array(&$this,'blogim_action_register_script'));
 			add_action('wp_enqueue_scripts'	,array(&$this,'blogim_action_register_style'));
+			add_action('admin_enqueue_scripts', array(&$this, 'blogim_action_register_admin_style_pro_features') );
 			add_action('customize_controls_enqueue_scripts',array(&$this,'blogim_action_register_admin_style' ));
 		}
 
@@ -41,6 +42,10 @@ if( ! class_exists('blogim_CSSJS')){
 			wp_enqueue_style('blogim_style');
 		}
 		
+		public function blogim_action_register_admin_style_pro_features() {
+			wp_register_style('blogim_custom_admin',get_template_directory_uri().'/assets/css/custom_admin.css');
+			wp_enqueue_style('blogim_custom_admin');
+		}
 		public function blogim_action_register_admin_style(){
 			wp_register_style('blogim_admin',get_template_directory_uri().'/assets/css/admin.css');
 			wp_enqueue_style('blogim_admin');
